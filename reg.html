@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Notes | Registration</title>
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+  <!-- General app container -->
+  <div class="app-container container-fluid flex-centered">
+    <!-- General form template -->
+    <div class="registration-wrapper">
+      <!-- Registration form -->
+      <!-- TODO: Change GET method to POST after frontend part of the project will be ready -->
+      <form action="index.html" method="GET" class="d-flex flex-column">
+        <h1 class="text-center">Регистрация</h1>
+        <input type="name" name="name" id="name" class="form-control form-input" placeholder="Ваше имя"
+          autocomplete="off">
+        <input type="email" name="email" id="email" class="form-control form-input" placeholder="Ваш E-mail"
+          autocomplete="off">
+        <input type="password" name="password" id="password" class="form-control form-input"
+          placeholder="Придумайте пароль" autocomplete="off">
+        <input type="password" name="repeatedPassword" id="repeatedPassword" class="form-control form-input"
+          placeholder="Повторите ваш пароль" autocomplete="off">
+        <button type="submit" class="px-5 align-self-center form-control"><span>Зарегистрироваться</span></button>
+        <!-- Here the link to the registration page -->
+        <p class="text-center text-muted">Уже есть аккаунт?<br><a href="login.html">Войти</a>
+        </p>
+      </form>
+      <!-- Registration form end -->
+    </div>
+    <!-- General form template end -->
+  </div>
+  <!-- General app container -->
+</body>
+
+</html>

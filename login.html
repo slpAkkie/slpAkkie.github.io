@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Notes | Login</title>
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+  <!-- General app container -->
+  <div class="app-container container-fluid flex-centered">
+    <!-- General form template -->
+    <div class="login-wrapper">
+      <!-- Login form -->
+      <!-- TODO: Change GET method to POST after frontend part of the project will be ready -->
+      <form action="index.html" method="GET" class="d-flex flex-column">
+        <h1 class="text-center">Авторизация</h1>
+        <input type="email" name="email" id="email" class="form-control form-input" placeholder="Ваш E-mail"
+          autocomplete="off">
+        <input type="password" name="password" id="password" class="form-control form-input" placeholder="Ваш пароль"
+          autocomplete="off">
+        <button type="submit" class="px-5 align-self-center form-control"><span>Войти</span></button>
+        <!-- Here the link to the registration page -->
+        <p class="text-center text-muted">Вы также можете зарегистрироваться<br><a href="reg.html">здесь</a>
+        </p>
+      </form>
+      <!-- Login form end -->
+    </div>
+    <!-- General form template end -->
+  </div>
+  <!-- General app container -->
+</body>
+
+</html>
