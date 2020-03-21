@@ -22,7 +22,7 @@
                 <!-- Note icon (svg preferably) -->
                 <div class="icon mr-3"></div>
                 <!-- Some details about a note -->
-                <div class="data">
+                <div class="data flex-grow-1">
                   <div class="top flex-centered-sides">
                     <div class="note-title h3">Заголовок заметки</div>
                     <span class="date-m text-muted ml-5">Вчера</span>
@@ -42,7 +42,7 @@
                 <!-- Note icon (svg preferably) -->
                 <div class="icon mr-3"></div>
                 <!-- Some details about a note -->
-                <div class="data">
+                <div class="data flex-grow-1">
                   <div class="top flex-centered-sides">
                     <div class="note-title h3">Заголовок заметки</div>
                     <span class="date-m text-muted ml-5">Вчера</span>
@@ -62,7 +62,7 @@
                 <!-- Note icon (svg preferably) -->
                 <div class="icon mr-3"></div>
                 <!-- Some details about a note -->
-                <div class="data">
+                <div class="data flex-grow-1">
                   <div class="top flex-centered-sides">
                     <div class="note-title h3">Заголовок заметки</div>
                     <span class="date-m text-muted ml-5">Вчера</span>
@@ -82,7 +82,7 @@
                 <!-- Note icon (svg preferably) -->
                 <div class="icon mr-3"></div>
                 <!-- Some details about a note -->
-                <div class="data">
+                <div class="data flex-grow-1">
                   <div class="top flex-centered-sides">
                     <div class="note-title h3">Заголовок заметки</div>
                     <span class="date-m text-muted ml-5">Вчера</span>
@@ -102,7 +102,7 @@
                 <!-- Note icon (svg preferably) -->
                 <div class="icon mr-3"></div>
                 <!-- Some details about a note -->
-                <div class="data">
+                <div class="data flex-grow-1">
                   <div class="top flex-centered-sides">
                     <div class="note-title h3">Заголовок заметки</div>
                     <span class="date-m text-muted ml-5">Вчера</span>
@@ -122,7 +122,7 @@
                 <!-- Note icon (svg preferably) -->
                 <div class="icon mr-3"></div>
                 <!-- Some details about a note -->
-                <div class="data">
+                <div class="data flex-grow-1">
                   <div class="top flex-centered-sides">
                     <div class="note-title h3">Заголовок заметки</div>
                     <span class="date-m text-muted ml-5">Вчера</span>
@@ -142,7 +142,7 @@
                 <!-- Note icon (svg preferably) -->
                 <div class="icon mr-3"></div>
                 <!-- Some details about a note -->
-                <div class="data">
+                <div class="data flex-grow-1">
                   <div class="top flex-centered-sides">
                     <div class="note-title h3">Заголовок заметки</div>
                     <span class="date-m text-muted ml-5">Вчера</span>
@@ -162,7 +162,7 @@
                 <!-- Note icon (svg preferably) -->
                 <div class="icon mr-3"></div>
                 <!-- Some details about a note -->
-                <div class="data">
+                <div class="data flex-grow-1">
                   <div class="top flex-centered-sides">
                     <div class="note-title h3">Заголовок заметки</div>
                     <span class="date-m text-muted ml-5">Вчера</span>
@@ -182,7 +182,7 @@
                 <!-- Note icon (svg preferably) -->
                 <div class="icon mr-3"></div>
                 <!-- Some details about a note -->
-                <div class="data">
+                <div class="data flex-grow-1">
                   <div class="top flex-centered-sides">
                     <div class="note-title h3">Заголовок заметки</div>
                     <span class="date-m text-muted ml-5">Вчера</span>
@@ -202,7 +202,7 @@
                 <!-- Note icon (svg preferably) -->
                 <div class="icon mr-3"></div>
                 <!-- Some details about a note -->
-                <div class="data">
+                <div class="data flex-grow-1">
                   <div class="top flex-centered-sides">
                     <div class="note-title h3">Заголовок заметки</div>
                     <span class="date-m text-muted ml-5">Вчера</span>
@@ -221,16 +221,19 @@
         </div>
       </div>
       <!-- Middle side for note editor -->
-      <div class="middle-side hidden">
-        <div class="wrapper">
-          <div class="inner-tools">
-            <div class="text-editor">
-              <div class="text-title text-field" contenteditable="true" data-text="Название"></div>
-              <div class="text-content text-field" contenteditable="true" data-text="Контент"></div>
-              <div class="text-tools hidden">
-                <span id="bold"><b>B</b></span>
-                <span id="italic"><i>I</i></span>
-                <span id="underline"><u>U</u></span>
+      <div class="collapsing-wrapper hidden" id="js-collapse-middle">
+        <div id="middle-side">
+          <div class="editor d-flex flex-column">
+            <div class="editor-field mb-3">
+              <h4 class="m-0 w-placeholder" contenteditable="true" data-text="Название"></h4>
+            </div>
+            <div class="editor-field d-flex flex-grow-1 position-relative">
+              <div class="w-placeholder flex-grow-1 text-area" id="js-change" contenteditable="true"
+                data-text="Контент"></div>
+              <div class="text-tools hidden" id="js-slide">
+                <div class="text-format" id="js-bold"><b>B</b></div>
+                <div class="text-format" id="js-italic"><i>I</i></div>
+                <div class="text-format" id="js-underline"><u>U</u></div>
               </div>
             </div>
           </div>
