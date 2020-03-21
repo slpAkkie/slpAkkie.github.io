@@ -222,12 +222,17 @@
       </div>
       <!-- Middle side for note editor -->
       <div class="middle-side hidden">
-        <div class="inner-tools">
-          <div class="text-content" contenteditable="true"></div>
-          <div class="text-tools hidden">
-            <span id="bold"><b>B</b></span>
-            <span id="italic"><i>I</i></span>
-            <span id="underline"><u>U</u></span>
+        <div class="wrapper">
+          <div class="inner-tools">
+            <div class="text-editor">
+              <div class="text-title text-field" contenteditable="true" data-text="Название"></div>
+              <div class="text-content text-field" contenteditable="true" data-text="Контент"></div>
+              <div class="text-tools hidden">
+                <span id="bold"><b>B</b></span>
+                <span id="italic"><i>I</i></span>
+                <span id="underline"><u>U</u></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
