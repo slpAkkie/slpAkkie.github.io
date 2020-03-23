@@ -7,14 +7,15 @@
 </head>
 
 <body>
-  <!-- General app container -->
+  <!-- Контейнер приложения -->
   <div class="app-container container-fluid flex-centered">
-    <!-- General form template -->
-    <div class="registration-wrapper">
-      <!-- Registration form -->
-      <!-- TODO: Change GET method to POST after frontend part of the project will be ready -->
+    <!-- Обертка формы -->
+    <div class="app__registration-wrapper">
+      <!-- Форма регистрации -->
+      <!-- TODO: Поменять GET на POST, когда верстка будет завершена -->
       <form action="index.html" method="GET" class="d-flex flex-column">
         <h1 class="text-center">Регистрация</h1>
+
         <input type="name" name="name" id="name" class="form-control form-input" placeholder="Ваше имя"
           autocomplete="off">
         <input type="email" name="email" id="email" class="form-control form-input" placeholder="Ваш E-mail"
@@ -23,16 +24,17 @@
           placeholder="Придумайте пароль" autocomplete="off">
         <input type="password" name="repeatedPassword" id="repeatedPassword" class="form-control form-input"
           placeholder="Повторите ваш пароль" autocomplete="off">
+
         <button type="submit" class="px-5 align-self-center form-control"><span>Зарегистрироваться</span></button>
-        <!-- Here the link to the registration page -->
+        <!-- TODO: Здесь необходимо разместить ссылку на страницу регистрации-->
         <p class="text-center text-muted">Уже есть аккаунт?<br><a href="login.html">Войти</a>
         </p>
       </form>
-      <!-- Registration form end -->
+      <!-- Форма регистрации end -->
     </div>
-    <!-- General form template end -->
+    <!-- Обертка формы end -->
   </div>
-  <!-- General app container -->
+  <!-- Контейнер приложения end -->
 </body>
 
 </html>

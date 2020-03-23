@@ -7,244 +7,254 @@
 </head>
 
 <body>
-  <!-- General app container -->
-  <div class="app-container container-fluid flex-centered">
-    <!-- Main app area -->
-    <div class="notes-wrapper d-flex">
-      <!-- Left side with notes strip -->
-      <div class="left-side">
-        <h2 class="text-center p-4">Заметки</h2>
-        <div class="notes-list">
-          <div class="notes-strip">
-            <!-- One item in the strip -->
-            <div class="strip-item px-4">
-              <div class="item-inner p-4 flex-centered-sides">
-                <!-- Note icon (svg preferably) -->
-                <div class="icon mr-3"></div>
-                <!-- Some details about a note -->
-                <div class="data flex-grow-1">
-                  <div class="top flex-centered-sides">
-                    <div class="note-title h3">Заголовок заметки</div>
-                    <span class="date-m text-muted ml-5">Вчера</span>
+  <!-- Контейнер приложения -->
+  <div class="app-container container-fluid p-0 flex-centered">
+    <!-- Основная часть приложения -->
+    <div class="app__notes-wrapper d-flex">
+      <!-- Левая часть со списком заметок -->
+      <div class="notes__list-wrapper">
+        <h2 class=" text-center p-4">Заметки</h2>
+        <div class="notes__list-body">
+          <div class="notes__list" id="js-notesList">
+            <!-- Элемент списка -->
+            <div class="list__item px-4" id="unique-note-id">
+              <div class="item__wrapper p-4 flex-centered-sides">
+                <!-- Иконка заметки (Желательно svg) -->
+                <div class="item__icon mr-3"></div>
+                <!-- Небольшое описание -->
+                <div class="item__data flex-grow-1">
+                  <div class="data__top flex-centered-sides">
+                    <div class="item__title h3">Заголовок заметки</div>
+                    <span class="item__modify-date text-muted ml-5">Вчера</span>
                   </div>
-                  <div class="bottom">
-                    <div class="cathegory text-muted">Заметка</div>
-                    <!-- If a note with protection must be an icon here (svg preferably) -->
-                    <div class="protected"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- One item in the strip end -->
-            <!-- One item in the strip -->
-            <div class="strip-item px-4">
-              <div class="item-inner p-4 flex-centered-sides">
-                <!-- Note icon (svg preferably) -->
-                <div class="icon mr-3"></div>
-                <!-- Some details about a note -->
-                <div class="data flex-grow-1">
-                  <div class="top flex-centered-sides">
-                    <div class="note-title h3">Заголовок заметки</div>
-                    <span class="date-m text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="bottom">
-                    <div class="cathegory text-muted">Заметка</div>
-                    <!-- If a note with protection must be an icon here (svg preferably) -->
-                    <div class="protected"></div>
+                  <div class="data__bottom">
+                    <div class="item__cathegory text-muted">Заметка</div>
+                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                    <div class="item__is-protected"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- One item in the strip end -->
-            <!-- One item in the strip -->
-            <div class="strip-item px-4">
-              <div class="item-inner p-4 flex-centered-sides">
-                <!-- Note icon (svg preferably) -->
-                <div class="icon mr-3"></div>
-                <!-- Some details about a note -->
-                <div class="data flex-grow-1">
-                  <div class="top flex-centered-sides">
-                    <div class="note-title h3">Заголовок заметки</div>
-                    <span class="date-m text-muted ml-5">Вчера</span>
+            <!-- Элемент списка end -->
+            <!-- Элемент списка -->
+            <div class="list__item px-4" id="unique-note-id">
+              <div class="item__wrapper p-4 flex-centered-sides">
+                <!-- Иконка заметки (Желательно svg) -->
+                <div class="item__icon mr-3"></div>
+                <!-- Небольшое описание -->
+                <div class="item__data flex-grow-1">
+                  <div class="data__top flex-centered-sides">
+                    <div class="item__title h3">Заголовок заметки</div>
+                    <span class="item__modify-date text-muted ml-5">Вчера</span>
                   </div>
-                  <div class="bottom">
-                    <div class="cathegory text-muted">Заметка</div>
-                    <!-- If a note with protection must be an icon here (svg preferably) -->
-                    <div class="protected"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- One item in the strip end -->
-            <!-- One item in the strip -->
-            <div class="strip-item px-4">
-              <div class="item-inner p-4 flex-centered-sides">
-                <!-- Note icon (svg preferably) -->
-                <div class="icon mr-3"></div>
-                <!-- Some details about a note -->
-                <div class="data flex-grow-1">
-                  <div class="top flex-centered-sides">
-                    <div class="note-title h3">Заголовок заметки</div>
-                    <span class="date-m text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="bottom">
-                    <div class="cathegory text-muted">Заметка</div>
-                    <!-- If a note with protection must be an icon here (svg preferably) -->
-                    <div class="protected"></div>
+                  <div class="data__bottom">
+                    <div class="item__cathegory text-muted">Заметка</div>
+                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                    <div class="item__is-protected"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- One item in the strip end -->
-            <!-- One item in the strip -->
-            <div class="strip-item px-4">
-              <div class="item-inner p-4 flex-centered-sides">
-                <!-- Note icon (svg preferably) -->
-                <div class="icon mr-3"></div>
-                <!-- Some details about a note -->
-                <div class="data flex-grow-1">
-                  <div class="top flex-centered-sides">
-                    <div class="note-title h3">Заголовок заметки</div>
-                    <span class="date-m text-muted ml-5">Вчера</span>
+            <!-- Элемент списка end -->
+            <!-- Элемент списка -->
+            <div class="list__item px-4" id="unique-note-id">
+              <div class="item__wrapper p-4 flex-centered-sides">
+                <!-- Иконка заметки (Желательно svg) -->
+                <div class="item__icon mr-3"></div>
+                <!-- Небольшое описание -->
+                <div class="item__data flex-grow-1">
+                  <div class="data__top flex-centered-sides">
+                    <div class="item__title h3">Заголовок заметки</div>
+                    <span class="item__modify-date text-muted ml-5">Вчера</span>
                   </div>
-                  <div class="bottom">
-                    <div class="cathegory text-muted">Заметка</div>
-                    <!-- If a note with protection must be an icon here (svg preferably) -->
-                    <div class="protected"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- One item in the strip end -->
-            <!-- One item in the strip -->
-            <div class="strip-item px-4">
-              <div class="item-inner p-4 flex-centered-sides">
-                <!-- Note icon (svg preferably) -->
-                <div class="icon mr-3"></div>
-                <!-- Some details about a note -->
-                <div class="data flex-grow-1">
-                  <div class="top flex-centered-sides">
-                    <div class="note-title h3">Заголовок заметки</div>
-                    <span class="date-m text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="bottom">
-                    <div class="cathegory text-muted">Заметка</div>
-                    <!-- If a note with protection must be an icon here (svg preferably) -->
-                    <div class="protected"></div>
+                  <div class="data__bottom">
+                    <div class="item__cathegory text-muted">Заметка</div>
+                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                    <div class="item__is-protected"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- One item in the strip end -->
-            <!-- One item in the strip -->
-            <div class="strip-item px-4">
-              <div class="item-inner p-4 flex-centered-sides">
-                <!-- Note icon (svg preferably) -->
-                <div class="icon mr-3"></div>
-                <!-- Some details about a note -->
-                <div class="data flex-grow-1">
-                  <div class="top flex-centered-sides">
-                    <div class="note-title h3">Заголовок заметки</div>
-                    <span class="date-m text-muted ml-5">Вчера</span>
+            <!-- Элемент списка end -->
+            <!-- Элемент списка -->
+            <div class="list__item px-4" id="unique-note-id">
+              <div class="item__wrapper p-4 flex-centered-sides">
+                <!-- Иконка заметки (Желательно svg) -->
+                <div class="item__icon mr-3"></div>
+                <!-- Небольшое описание -->
+                <div class="item__data flex-grow-1">
+                  <div class="data__top flex-centered-sides">
+                    <div class="item__title h3">Заголовок заметки</div>
+                    <span class="item__modify-date text-muted ml-5">Вчера</span>
                   </div>
-                  <div class="bottom">
-                    <div class="cathegory text-muted">Заметка</div>
-                    <!-- If a note with protection must be an icon here (svg preferably) -->
-                    <div class="protected"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- One item in the strip end -->
-            <!-- One item in the strip -->
-            <div class="strip-item px-4">
-              <div class="item-inner p-4 flex-centered-sides">
-                <!-- Note icon (svg preferably) -->
-                <div class="icon mr-3"></div>
-                <!-- Some details about a note -->
-                <div class="data flex-grow-1">
-                  <div class="top flex-centered-sides">
-                    <div class="note-title h3">Заголовок заметки</div>
-                    <span class="date-m text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="bottom">
-                    <div class="cathegory text-muted">Заметка</div>
-                    <!-- If a note with protection must be an icon here (svg preferably) -->
-                    <div class="protected"></div>
+                  <div class="data__bottom">
+                    <div class="item__cathegory text-muted">Заметка</div>
+                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                    <div class="item__is-protected"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- One item in the strip end -->
-            <!-- One item in the strip -->
-            <div class="strip-item px-4">
-              <div class="item-inner p-4 flex-centered-sides">
-                <!-- Note icon (svg preferably) -->
-                <div class="icon mr-3"></div>
-                <!-- Some details about a note -->
-                <div class="data flex-grow-1">
-                  <div class="top flex-centered-sides">
-                    <div class="note-title h3">Заголовок заметки</div>
-                    <span class="date-m text-muted ml-5">Вчера</span>
+            <!-- Элемент списка end -->
+            <!-- Элемент списка -->
+            <div class="list__item px-4" id="unique-note-id">
+              <div class="item__wrapper p-4 flex-centered-sides">
+                <!-- Иконка заметки (Желательно svg) -->
+                <div class="item__icon mr-3"></div>
+                <!-- Небольшое описание -->
+                <div class="item__data flex-grow-1">
+                  <div class="data__top flex-centered-sides">
+                    <div class="item__title h3">Заголовок заметки</div>
+                    <span class="item__modify-date text-muted ml-5">Вчера</span>
                   </div>
-                  <div class="bottom">
-                    <div class="cathegory text-muted">Заметка</div>
-                    <!-- If a note with protection must be an icon here (svg preferably) -->
-                    <div class="protected"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- One item in the strip end -->
-            <!-- One item in the strip -->
-            <div class="strip-item px-4">
-              <div class="item-inner p-4 flex-centered-sides">
-                <!-- Note icon (svg preferably) -->
-                <div class="icon mr-3"></div>
-                <!-- Some details about a note -->
-                <div class="data flex-grow-1">
-                  <div class="top flex-centered-sides">
-                    <div class="note-title h3">Заголовок заметки</div>
-                    <span class="date-m text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="bottom">
-                    <div class="cathegory text-muted">Заметка</div>
-                    <!-- If a note with protection must be an icon here (svg preferably) -->
-                    <div class="protected"></div>
+                  <div class="data__bottom">
+                    <div class="item__cathegory text-muted">Заметка</div>
+                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                    <div class="item__is-protected"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- One item in the strip end -->
+            <!-- Элемент списка end -->
+            <!-- Элемент списка -->
+            <div class="list__item px-4" id="unique-note-id">
+              <div class="item__wrapper p-4 flex-centered-sides">
+                <!-- Иконка заметки (Желательно svg) -->
+                <div class="item__icon mr-3"></div>
+                <!-- Небольшое описание -->
+                <div class="item__data flex-grow-1">
+                  <div class="data__top flex-centered-sides">
+                    <div class="item__title h3">Заголовок заметки</div>
+                    <span class="item__modify-date text-muted ml-5">Вчера</span>
+                  </div>
+                  <div class="data__bottom">
+                    <div class="item__cathegory text-muted">Заметка</div>
+                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                    <div class="item__is-protected"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Элемент списка end -->
+            <!-- Элемент списка -->
+            <div class="list__item px-4" id="unique-note-id">
+              <div class="item__wrapper p-4 flex-centered-sides">
+                <!-- Иконка заметки (Желательно svg) -->
+                <div class="item__icon mr-3"></div>
+                <!-- Небольшое описание -->
+                <div class="item__data flex-grow-1">
+                  <div class="data__top flex-centered-sides">
+                    <div class="item__title h3">Заголовок заметки</div>
+                    <span class="item__modify-date text-muted ml-5">Вчера</span>
+                  </div>
+                  <div class="data__bottom">
+                    <div class="item__cathegory text-muted">Заметка</div>
+                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                    <div class="item__is-protected"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Элемент списка end -->
+            <!-- Элемент списка -->
+            <div class="list__item px-4" id="unique-note-id">
+              <div class="item__wrapper p-4 flex-centered-sides">
+                <!-- Иконка заметки (Желательно svg) -->
+                <div class="item__icon mr-3"></div>
+                <!-- Небольшое описание -->
+                <div class="item__data flex-grow-1">
+                  <div class="data__top flex-centered-sides">
+                    <div class="item__title h3">Заголовок заметки</div>
+                    <span class="item__modify-date text-muted ml-5">Вчера</span>
+                  </div>
+                  <div class="data__bottom">
+                    <div class="item__cathegory text-muted">Заметка</div>
+                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                    <div class="item__is-protected"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Элемент списка end -->
+            <!-- Элемент списка -->
+            <div class="list__item px-4" id="unique-note-id">
+              <div class="item__wrapper p-4 flex-centered-sides">
+                <!-- Иконка заметки (Желательно svg) -->
+                <div class="item__icon mr-3"></div>
+                <!-- Небольшое описание -->
+                <div class="item__data flex-grow-1">
+                  <div class="data__top flex-centered-sides">
+                    <div class="item__title h3">Заголовок заметки</div>
+                    <span class="item__modify-date text-muted ml-5">Вчера</span>
+                  </div>
+                  <div class="data__bottom">
+                    <div class="item__cathegory text-muted">Заметка</div>
+                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                    <div class="item__is-protected"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Элемент списка end -->
+            <!-- Элемент списка -->
+            <div class="list__item px-4" id="unique-note-id">
+              <div class="item__wrapper p-4 flex-centered-sides">
+                <!-- Иконка заметки (Желательно svg) -->
+                <div class="item__icon mr-3"></div>
+                <!-- Небольшое описание -->
+                <div class="item__data flex-grow-1">
+                  <div class="data__top flex-centered-sides">
+                    <div class="item__title h3">Заголовок заметки</div>
+                    <span class="item__modify-date text-muted ml-5">Вчера</span>
+                  </div>
+                  <div class="data__bottom">
+                    <div class="item__cathegory text-muted">Заметка</div>
+                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                    <div class="item__is-protected"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Элемент списка end -->
           </div>
-          <div class="float-button"></div>
+          <div class="notes__add-note-button"></div>
         </div>
       </div>
-      <!-- Middle side for note editor -->
-      <div class="collapsing-wrapper hidden" id="js-collapse-middle">
-        <div id="middle-side">
-          <div class="editor d-flex flex-column">
-            <div class="editor-field mb-3">
-              <h4 class="m-0 w-placeholder" contenteditable="true" data-text="Название"></h4>
+
+      <!-- Центральная часть для редактора -->
+      <div class="notes__collapsing-wrapper hidden" id="js-collapseMiddle">
+        <div class="notes__editor-wrapper">
+          <div class="notes__editor d-flex flex-column">
+            <!-- Редактор Заголовка заметки -->
+            <div class="editor__input-wrapper mb-3">
+              <h4 class="m-0 w-placeholder" id="js-editorTitle" contenteditable="true" data-text="Название"></h4>
             </div>
-            <div class="editor-field d-flex flex-grow-1 position-relative">
-              <div class="w-placeholder flex-grow-1 text-area" id="js-change" contenteditable="true"
-                data-text="Контент"></div>
-              <div class="text-tools hidden" id="js-slide">
-                <div class="text-format" id="js-bold"><b>B</b></div>
-                <div class="text-format" id="js-italic"><i>I</i></div>
-                <div class="text-format" id="js-underline"><u>U</u></div>
+            <!-- Редактор тела зметки -->
+            <div class="editor__input-wrapper d-flex flex-grow-1 position-relative">
+              <!-- Фрейм для ввода-редактирования текста -->
+              <iframe class="w-placeholder flex-grow-1 editor__frame" id="js-editorFrame" contenteditable="true"
+                data-text="Контент"></iframe>
+              <!-- Инструменты форматирования -->
+              <div class="editor__formatting-tool-wrapper hidden" id="js-formattingTools">
+                <div class="editor__formatting-tool" id="js-bold" data-action="bold"><b>B</b></div>
+                <div class="editor__formatting-tool" id="js-italic" data-action="italic"><i>I</i></div>
+                <div class="editor__formatting-tool" id="js-underline" data-action="underline"><u>U</u></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Right side for note settings -->
-      <div class="right-side hidden"></div>
+
+      <!-- Правая часть с настройками заметки -->
+      <div class="notes__collapsing-wrapper hidden">
+        <div class="notes__settins-wrapper">
+          <div class="notes__settings"></div>
+        </div>
+      </div>
     </div>
-    <!-- Main app area end -->
+    <!-- Основная часть приложенния end -->
   </div>
-  <!-- General app container end -->
+  <!-- Контейнер приложения end -->
 
   <script src="js/main.js"></script>
 </body>
