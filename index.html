@@ -4,6 +4,7 @@
 <head>
   <title>Notes</title>
   <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
             <div class="list__item px-4" id="unique-note-id">
               <div class="item__wrapper p-4 flex-centered-sides">
                 <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-3"></div>
+                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
                 <!-- Небольшое описание -->
                 <div class="item__data flex-grow-1">
                   <div class="data__top flex-centered-sides">
@@ -40,7 +41,7 @@
             <div class="list__item px-4" id="unique-note-id">
               <div class="item__wrapper p-4 flex-centered-sides">
                 <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-3"></div>
+                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
                 <!-- Небольшое описание -->
                 <div class="item__data flex-grow-1">
                   <div class="data__top flex-centered-sides">
@@ -60,7 +61,7 @@
             <div class="list__item px-4" id="unique-note-id">
               <div class="item__wrapper p-4 flex-centered-sides">
                 <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-3"></div>
+                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
                 <!-- Небольшое описание -->
                 <div class="item__data flex-grow-1">
                   <div class="data__top flex-centered-sides">
@@ -80,7 +81,7 @@
             <div class="list__item px-4" id="unique-note-id">
               <div class="item__wrapper p-4 flex-centered-sides">
                 <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-3"></div>
+                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
                 <!-- Небольшое описание -->
                 <div class="item__data flex-grow-1">
                   <div class="data__top flex-centered-sides">
@@ -100,7 +101,7 @@
             <div class="list__item px-4" id="unique-note-id">
               <div class="item__wrapper p-4 flex-centered-sides">
                 <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-3"></div>
+                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
                 <!-- Небольшое описание -->
                 <div class="item__data flex-grow-1">
                   <div class="data__top flex-centered-sides">
@@ -120,7 +121,7 @@
             <div class="list__item px-4" id="unique-note-id">
               <div class="item__wrapper p-4 flex-centered-sides">
                 <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-3"></div>
+                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
                 <!-- Небольшое описание -->
                 <div class="item__data flex-grow-1">
                   <div class="data__top flex-centered-sides">
@@ -140,7 +141,7 @@
             <div class="list__item px-4" id="unique-note-id">
               <div class="item__wrapper p-4 flex-centered-sides">
                 <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-3"></div>
+                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
                 <!-- Небольшое описание -->
                 <div class="item__data flex-grow-1">
                   <div class="data__top flex-centered-sides">
@@ -160,7 +161,7 @@
             <div class="list__item px-4" id="unique-note-id">
               <div class="item__wrapper p-4 flex-centered-sides">
                 <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-3"></div>
+                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
                 <!-- Небольшое описание -->
                 <div class="item__data flex-grow-1">
                   <div class="data__top flex-centered-sides">
@@ -180,7 +181,7 @@
             <div class="list__item px-4" id="unique-note-id">
               <div class="item__wrapper p-4 flex-centered-sides">
                 <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-3"></div>
+                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
                 <!-- Небольшое описание -->
                 <div class="item__data flex-grow-1">
                   <div class="data__top flex-centered-sides">
@@ -200,7 +201,7 @@
             <div class="list__item px-4" id="unique-note-id">
               <div class="item__wrapper p-4 flex-centered-sides">
                 <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-3"></div>
+                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
                 <!-- Небольшое описание -->
                 <div class="item__data flex-grow-1">
                   <div class="data__top flex-centered-sides">
@@ -235,10 +236,18 @@
               <iframe class="w-placeholder flex-grow-1 editor__frame" id="js-editorFrame" contenteditable="true"
                 data-text="Контент"></iframe>
               <!-- Инструменты форматирования -->
-              <div class="editor__formatting-tool-wrapper hidden" id="js-formattingTools">
-                <div class="editor__formatting-tool" id="js-bold" data-action="bold"><b>B</b></div>
-                <div class="editor__formatting-tool" id="js-italic" data-action="italic"><i>I</i></div>
-                <div class="editor__formatting-tool" id="js-underline" data-action="underline"><u>U</u></div>
+              <div class="editor__bottom-tool-wrapper hidden" id="js-formattingTools">
+                <div class="bottom-tool__formatting-tools d-flex flex-grow-1">
+                  <div class="editor__formatting-tool" id="js-bold" data-action="bold"><i class="fas fa-bold"></i></div>
+                  <div class="editor__formatting-tool" id="js-italic" data-action="italic"><i class="fas fa-italic"></i>
+                  </div>
+                  <div class="editor__formatting-tool" id="js-underline" data-action="underline"><i
+                      class="fas fa-underline"></i></div>
+                </div>
+
+                <div class="bottom-tool__settings-tools d-flex">
+                  <div class="editor__settings-tool" id="js-openSettings"><i class="fas fa-cog"></i></div>
+                </div>
               </div>
             </div>
           </div>
