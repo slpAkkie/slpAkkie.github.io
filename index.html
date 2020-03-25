@@ -8,6 +8,17 @@
 </head>
 
 <body>
+  <!-- Preloader -->
+  <div class="preloader-container flex-centered flex-column position-absolute w-100 h-100" id="js-preloader">
+    <div class="preloader-wrapper text-center">
+      <div class="preloader-body">
+        <h2>Подождите!</h2>
+        <p>Идет загрузка</p>
+      </div>
+    </div>
+  </div>
+  <!-- Preloader end -->
+
   <!-- Контейнер приложения -->
   <div class="app-container container-fluid p-0 flex-centered">
     <!-- Основная часть приложения -->
@@ -223,8 +234,8 @@
       </div>
 
       <!-- Центральная часть для редактора -->
-      <div class="notes__collapsing-wrapper hidden" id="js-collapseMiddle">
-        <div class="notes__editor-wrapper">
+      <div class="notes__collapsing-wrapper d-flex hidden" id="js-collapseMiddle">
+        <div class="notes__editor-wrapper flex-grow-1">
           <div class="notes__editor d-flex flex-column">
             <!-- Редактор Заголовка заметки -->
             <div class="editor__input-wrapper mb-3">
@@ -255,9 +266,18 @@
       </div>
 
       <!-- Правая часть с настройками заметки -->
-      <div class="notes__collapsing-wrapper hidden">
-        <div class="notes__settins-wrapper">
-          <div class="notes__settings"></div>
+      <div class="notes__collapsing-wrapper notes__collapsing-wrapper_inside d-flex hidden" id="js-collapseRight">
+        <div class="notes__settins-wrapper d-flex flex-grow-1">
+          <div class="notes__settings flex-grow-1">
+            <div class="setting__item-wrapper settings__top d-flex">
+              <div class="top__icon" id="js-closeSettings"><i class="fas fa-caret-left"></i></div>
+              <div class="top__title flex-grow-1 h3 m-0 text-center">Настройки</div>
+            </div>
+            <div class="setting__item-wrapper">
+              <div class="control__title h4 m-0">Защищенная заметка</div>
+              <div class="control__switch" id="js-isProtect"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
