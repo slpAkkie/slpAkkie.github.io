@@ -1,4 +1,4 @@
-# slpMouse.github.io
+# [slpMouse.github.io](//slpMouse.github.io)
 
 ***
 Репозиторий для демонстрации текущего разрабатывающегося проекта в боевых условиях.
