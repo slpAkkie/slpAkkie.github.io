@@ -25,211 +25,213 @@
     <div class="app__notes-wrapper d-flex">
       <!-- Левая часть со списком заметок -->
       <div class="notes__list-wrapper">
-        <h2 class=" text-center p-4">Заметки</h2>
-        <div class="notes__list-body">
-          <div class="notes__list" id="js-notesList">
-            <!-- Элемент списка -->
-            <div class="list__item px-4" id="unique-note-id">
-              <div class="item__wrapper p-4 flex-centered-sides">
-                <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
-                <!-- Небольшое описание -->
-                <div class="item__data flex-grow-1">
-                  <div class="data__top flex-centered-sides">
-                    <div class="item__title h3">Заголовок заметки</div>
-                    <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="data__bottom">
-                    <div class="item__cathegory item__text-muted">Заметка</div>
-                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                    <div class="item__is-protected"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Элемент списка end -->
-            <!-- Элемент списка -->
-            <div class="list__item px-4" id="unique-note-id">
-              <div class="item__wrapper p-4 flex-centered-sides">
-                <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
-                <!-- Небольшое описание -->
-                <div class="item__data flex-grow-1">
-                  <div class="data__top flex-centered-sides">
-                    <div class="item__title h3">Заголовок заметки</div>
-                    <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="data__bottom">
-                    <div class="item__cathegory item__text-muted">Заметка</div>
-                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                    <div class="item__is-protected"></div>
+        <div class="notes__list-container">
+          <h2 class=" text-center p-4">Заметки</h2>
+          <div class="notes__list-body">
+            <div class="notes__list" id="js-notesList">
+              <!-- Элемент списка -->
+              <div class="list__item px-4" id="unique-note-id">
+                <div class="item__wrapper p-4 flex-centered-sides">
+                  <!-- Иконка заметки (Желательно svg) -->
+                  <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
+                  <!-- Небольшое описание -->
+                  <div class="item__data flex-grow-1">
+                    <div class="data__top flex-centered-sides">
+                      <div class="item__title h3">Заголовок заметки</div>
+                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
+                    </div>
+                    <div class="data__bottom">
+                      <div class="item__cathegory item__text-muted">Заметка</div>
+                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                      <div class="item__is-protected"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Элемент списка end -->
-            <!-- Элемент списка -->
-            <div class="list__item px-4" id="unique-note-id">
-              <div class="item__wrapper p-4 flex-centered-sides">
-                <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
-                <!-- Небольшое описание -->
-                <div class="item__data flex-grow-1">
-                  <div class="data__top flex-centered-sides">
-                    <div class="item__title h3">Заголовок заметки</div>
-                    <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="data__bottom">
-                    <div class="item__cathegory item__text-muted">Заметка</div>
-                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                    <div class="item__is-protected"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Элемент списка end -->
-            <!-- Элемент списка -->
-            <div class="list__item px-4" id="unique-note-id">
-              <div class="item__wrapper p-4 flex-centered-sides">
-                <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
-                <!-- Небольшое описание -->
-                <div class="item__data flex-grow-1">
-                  <div class="data__top flex-centered-sides">
-                    <div class="item__title h3">Заголовок заметки</div>
-                    <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="data__bottom">
-                    <div class="item__cathegory item__text-muted">Заметка</div>
-                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                    <div class="item__is-protected"></div>
+              <!-- Элемент списка end -->
+              <!-- Элемент списка -->
+              <div class="list__item px-4" id="unique-note-id">
+                <div class="item__wrapper p-4 flex-centered-sides">
+                  <!-- Иконка заметки (Желательно svg) -->
+                  <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
+                  <!-- Небольшое описание -->
+                  <div class="item__data flex-grow-1">
+                    <div class="data__top flex-centered-sides">
+                      <div class="item__title h3">Заголовок заметки</div>
+                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
+                    </div>
+                    <div class="data__bottom">
+                      <div class="item__cathegory item__text-muted">Заметка</div>
+                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                      <div class="item__is-protected"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Элемент списка end -->
-            <!-- Элемент списка -->
-            <div class="list__item px-4" id="unique-note-id">
-              <div class="item__wrapper p-4 flex-centered-sides">
-                <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
-                <!-- Небольшое описание -->
-                <div class="item__data flex-grow-1">
-                  <div class="data__top flex-centered-sides">
-                    <div class="item__title h3">Заголовок заметки</div>
-                    <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="data__bottom">
-                    <div class="item__cathegory item__text-muted">Заметка</div>
-                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                    <div class="item__is-protected"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Элемент списка end -->
-            <!-- Элемент списка -->
-            <div class="list__item px-4" id="unique-note-id">
-              <div class="item__wrapper p-4 flex-centered-sides">
-                <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
-                <!-- Небольшое описание -->
-                <div class="item__data flex-grow-1">
-                  <div class="data__top flex-centered-sides">
-                    <div class="item__title h3">Заголовок заметки</div>
-                    <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="data__bottom">
-                    <div class="item__cathegory item__text-muted">Заметка</div>
-                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                    <div class="item__is-protected"></div>
+              <!-- Элемент списка end -->
+              <!-- Элемент списка -->
+              <div class="list__item px-4" id="unique-note-id">
+                <div class="item__wrapper p-4 flex-centered-sides">
+                  <!-- Иконка заметки (Желательно svg) -->
+                  <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
+                  <!-- Небольшое описание -->
+                  <div class="item__data flex-grow-1">
+                    <div class="data__top flex-centered-sides">
+                      <div class="item__title h3">Заголовок заметки</div>
+                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
+                    </div>
+                    <div class="data__bottom">
+                      <div class="item__cathegory item__text-muted">Заметка</div>
+                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                      <div class="item__is-protected"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Элемент списка end -->
-            <!-- Элемент списка -->
-            <div class="list__item px-4" id="unique-note-id">
-              <div class="item__wrapper p-4 flex-centered-sides">
-                <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
-                <!-- Небольшое описание -->
-                <div class="item__data flex-grow-1">
-                  <div class="data__top flex-centered-sides">
-                    <div class="item__title h3">Заголовок заметки</div>
-                    <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="data__bottom">
-                    <div class="item__cathegory item__text-muted">Заметка</div>
-                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                    <div class="item__is-protected"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Элемент списка end -->
-            <!-- Элемент списка -->
-            <div class="list__item px-4" id="unique-note-id">
-              <div class="item__wrapper p-4 flex-centered-sides">
-                <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
-                <!-- Небольшое описание -->
-                <div class="item__data flex-grow-1">
-                  <div class="data__top flex-centered-sides">
-                    <div class="item__title h3">Заголовок заметки</div>
-                    <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="data__bottom">
-                    <div class="item__cathegory item__text-muted">Заметка</div>
-                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                    <div class="item__is-protected"></div>
+              <!-- Элемент списка end -->
+              <!-- Элемент списка -->
+              <div class="list__item px-4" id="unique-note-id">
+                <div class="item__wrapper p-4 flex-centered-sides">
+                  <!-- Иконка заметки (Желательно svg) -->
+                  <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
+                  <!-- Небольшое описание -->
+                  <div class="item__data flex-grow-1">
+                    <div class="data__top flex-centered-sides">
+                      <div class="item__title h3">Заголовок заметки</div>
+                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
+                    </div>
+                    <div class="data__bottom">
+                      <div class="item__cathegory item__text-muted">Заметка</div>
+                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                      <div class="item__is-protected"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Элемент списка end -->
-            <!-- Элемент списка -->
-            <div class="list__item px-4" id="unique-note-id">
-              <div class="item__wrapper p-4 flex-centered-sides">
-                <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
-                <!-- Небольшое описание -->
-                <div class="item__data flex-grow-1">
-                  <div class="data__top flex-centered-sides">
-                    <div class="item__title h3">Заголовок заметки</div>
-                    <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="data__bottom">
-                    <div class="item__cathegory item__text-muted">Заметка</div>
-                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                    <div class="item__is-protected"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Элемент списка end -->
-            <!-- Элемент списка -->
-            <div class="list__item px-4" id="unique-note-id">
-              <div class="item__wrapper p-4 flex-centered-sides">
-                <!-- Иконка заметки (Желательно svg) -->
-                <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
-                <!-- Небольшое описание -->
-                <div class="item__data flex-grow-1">
-                  <div class="data__top flex-centered-sides">
-                    <div class="item__title h3">Заголовок заметки</div>
-                    <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                  </div>
-                  <div class="data__bottom">
-                    <div class="item__cathegory item__text-muted">Заметка</div>
-                    <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                    <div class="item__is-protected"></div>
+              <!-- Элемент списка end -->
+              <!-- Элемент списка -->
+              <div class="list__item px-4" id="unique-note-id">
+                <div class="item__wrapper p-4 flex-centered-sides">
+                  <!-- Иконка заметки (Желательно svg) -->
+                  <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
+                  <!-- Небольшое описание -->
+                  <div class="item__data flex-grow-1">
+                    <div class="data__top flex-centered-sides">
+                      <div class="item__title h3">Заголовок заметки</div>
+                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
+                    </div>
+                    <div class="data__bottom">
+                      <div class="item__cathegory item__text-muted">Заметка</div>
+                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                      <div class="item__is-protected"></div>
+                    </div>
                   </div>
                 </div>
               </div>
+              <!-- Элемент списка end -->
+              <!-- Элемент списка -->
+              <div class="list__item px-4" id="unique-note-id">
+                <div class="item__wrapper p-4 flex-centered-sides">
+                  <!-- Иконка заметки (Желательно svg) -->
+                  <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
+                  <!-- Небольшое описание -->
+                  <div class="item__data flex-grow-1">
+                    <div class="data__top flex-centered-sides">
+                      <div class="item__title h3">Заголовок заметки</div>
+                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
+                    </div>
+                    <div class="data__bottom">
+                      <div class="item__cathegory item__text-muted">Заметка</div>
+                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                      <div class="item__is-protected"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Элемент списка end -->
+              <!-- Элемент списка -->
+              <div class="list__item px-4" id="unique-note-id">
+                <div class="item__wrapper p-4 flex-centered-sides">
+                  <!-- Иконка заметки (Желательно svg) -->
+                  <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
+                  <!-- Небольшое описание -->
+                  <div class="item__data flex-grow-1">
+                    <div class="data__top flex-centered-sides">
+                      <div class="item__title h3">Заголовок заметки</div>
+                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
+                    </div>
+                    <div class="data__bottom">
+                      <div class="item__cathegory item__text-muted">Заметка</div>
+                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                      <div class="item__is-protected"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Элемент списка end -->
+              <!-- Элемент списка -->
+              <div class="list__item px-4" id="unique-note-id">
+                <div class="item__wrapper p-4 flex-centered-sides">
+                  <!-- Иконка заметки (Желательно svg) -->
+                  <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
+                  <!-- Небольшое описание -->
+                  <div class="item__data flex-grow-1">
+                    <div class="data__top flex-centered-sides">
+                      <div class="item__title h3">Заголовок заметки</div>
+                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
+                    </div>
+                    <div class="data__bottom">
+                      <div class="item__cathegory item__text-muted">Заметка</div>
+                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                      <div class="item__is-protected"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Элемент списка end -->
+              <!-- Элемент списка -->
+              <div class="list__item px-4" id="unique-note-id">
+                <div class="item__wrapper p-4 flex-centered-sides">
+                  <!-- Иконка заметки (Желательно svg) -->
+                  <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
+                  <!-- Небольшое описание -->
+                  <div class="item__data flex-grow-1">
+                    <div class="data__top flex-centered-sides">
+                      <div class="item__title h3">Заголовок заметки</div>
+                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
+                    </div>
+                    <div class="data__bottom">
+                      <div class="item__cathegory item__text-muted">Заметка</div>
+                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                      <div class="item__is-protected"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Элемент списка end -->
+              <!-- Элемент списка -->
+              <div class="list__item px-4" id="unique-note-id">
+                <div class="item__wrapper p-4 flex-centered-sides">
+                  <!-- Иконка заметки (Желательно svg) -->
+                  <div class="item__icon mr-4"><i class="far fa-sticky-note"></i></div>
+                  <!-- Небольшое описание -->
+                  <div class="item__data flex-grow-1">
+                    <div class="data__top flex-centered-sides">
+                      <div class="item__title h3">Заголовок заметки</div>
+                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
+                    </div>
+                    <div class="data__bottom">
+                      <div class="item__cathegory item__text-muted">Заметка</div>
+                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
+                      <div class="item__is-protected"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Элемент списка end -->
             </div>
-            <!-- Элемент списка end -->
+            <div class="notes__add-note-button"></div>
           </div>
-          <div class="notes__add-note-button"></div>
         </div>
       </div>
 
