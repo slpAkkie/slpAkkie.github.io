@@ -1,295 +1,84 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notes</title>
-  <link rel="stylesheet" href="css/main.min.css">
-  <link rel="stylesheet" href="css/fontawesome.min.css">
-</head>
-
-<body>
-  <!-- Preloader -->
-  <div class="preloader-container flex-centered flex-column position-absolute w-100 h-100" id="js-preloader">
-    <div class="preloader-wrapper text-center">
-      <div class="preloader-body">
-        <h2>Подождите!</h2>
-        <p>Идет загрузка...</p>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Tom And Jerry</title>
+  </head>
+  <body class="container__full-screen">
+    <!-- Видеоролик с предысторией героев-->
+    <div class="container__full-screen" id="prehistory">
+      <video class="full-screen" src="media/TAJ-history.mp4" autoplay muted></video>
+      <div class="skip bottom">
+        <p>Нажмите "Пробел", чтобы пропустить ролик</p>
       </div>
     </div>
-  </div>
-  <!-- Preloader end -->
-
-  <!-- Контейнер приложения -->
-  <div class="app-container container-fluid p-0 flex-centered">
-    <!-- Основная часть приложения -->
-    <div class="app__notes-wrapper d-flex">
-      <!-- Левая часть со списком заметок -->
-      <div class="notes__list-wrapper">
-        <div class="notes__list-container">
-          <h2 class=" text-center p-4">Список</h2>
-          <div class="notes__list-body">
-            <div class="notes__list" id="js-notesList">
-              <!-- Элемент списка -->
-              <div class="list__item px-4" id="unique-note-id">
-                <div class="item__wrapper p-4 flex-centered-sides">
-                  <!-- Иконка заметки (Желательно svg) -->
-                  <div class="item__icon mr-4"><i class="fas fa-sticky-note"></i></div>
-                  <!-- Небольшое описание -->
-                  <div class="item__data flex-grow-1">
-                    <div class="data__top flex-centered-sides">
-                      <div class="item__title h3">Заголовок заметки</div>
-                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                    </div>
-                    <div class="data__bottom">
-                      <div class="item__cathegory item__text-muted">Заметка</div>
-                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                      <div class="item__is-protected"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Элемент списка end -->
-              <!-- Элемент списка -->
-              <div class="list__item px-4" id="unique-note-id">
-                <div class="item__wrapper p-4 flex-centered-sides">
-                  <!-- Иконка заметки (Желательно svg) -->
-                  <div class="item__icon mr-4"><i class="fas fa-sticky-note"></i></div>
-                  <!-- Небольшое описание -->
-                  <div class="item__data flex-grow-1">
-                    <div class="data__top flex-centered-sides">
-                      <div class="item__title h3">Заголовок заметки</div>
-                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                    </div>
-                    <div class="data__bottom">
-                      <div class="item__cathegory item__text-muted">Заметка</div>
-                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                      <div class="item__is-protected"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Элемент списка end -->
-              <!-- Элемент списка -->
-              <div class="list__item px-4" id="unique-note-id">
-                <div class="item__wrapper p-4 flex-centered-sides">
-                  <!-- Иконка заметки (Желательно svg) -->
-                  <div class="item__icon mr-4"><i class="fas fa-sticky-note"></i></div>
-                  <!-- Небольшое описание -->
-                  <div class="item__data flex-grow-1">
-                    <div class="data__top flex-centered-sides">
-                      <div class="item__title h3">Заголовок заметки</div>
-                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                    </div>
-                    <div class="data__bottom">
-                      <div class="item__cathegory item__text-muted">Заметка</div>
-                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                      <div class="item__is-protected"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Элемент списка end -->
-              <!-- Элемент списка -->
-              <div class="list__item px-4" id="unique-note-id">
-                <div class="item__wrapper p-4 flex-centered-sides">
-                  <!-- Иконка заметки (Желательно svg) -->
-                  <div class="item__icon mr-4"><i class="fas fa-sticky-note"></i></div>
-                  <!-- Небольшое описание -->
-                  <div class="item__data flex-grow-1">
-                    <div class="data__top flex-centered-sides">
-                      <div class="item__title h3">Заголовок заметки</div>
-                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                    </div>
-                    <div class="data__bottom">
-                      <div class="item__cathegory item__text-muted">Заметка</div>
-                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                      <div class="item__is-protected"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Элемент списка end -->
-              <!-- Элемент списка -->
-              <div class="list__item px-4" id="unique-note-id">
-                <div class="item__wrapper p-4 flex-centered-sides">
-                  <!-- Иконка заметки (Желательно svg) -->
-                  <div class="item__icon mr-4"><i class="fas fa-sticky-note"></i></div>
-                  <!-- Небольшое описание -->
-                  <div class="item__data flex-grow-1">
-                    <div class="data__top flex-centered-sides">
-                      <div class="item__title h3">Заголовок заметки</div>
-                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                    </div>
-                    <div class="data__bottom">
-                      <div class="item__cathegory item__text-muted">Заметка</div>
-                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                      <div class="item__is-protected"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Элемент списка end -->
-              <!-- Элемент списка -->
-              <div class="list__item px-4" id="unique-note-id">
-                <div class="item__wrapper p-4 flex-centered-sides">
-                  <!-- Иконка заметки (Желательно svg) -->
-                  <div class="item__icon mr-4"><i class="fas fa-sticky-note"></i></div>
-                  <!-- Небольшое описание -->
-                  <div class="item__data flex-grow-1">
-                    <div class="data__top flex-centered-sides">
-                      <div class="item__title h3">Заголовок заметки</div>
-                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                    </div>
-                    <div class="data__bottom">
-                      <div class="item__cathegory item__text-muted">Заметка</div>
-                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                      <div class="item__is-protected"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Элемент списка end -->
-              <!-- Элемент списка -->
-              <div class="list__item px-4" id="unique-note-id">
-                <div class="item__wrapper p-4 flex-centered-sides">
-                  <!-- Иконка заметки (Желательно svg) -->
-                  <div class="item__icon mr-4"><i class="fas fa-sticky-note"></i></div>
-                  <!-- Небольшое описание -->
-                  <div class="item__data flex-grow-1">
-                    <div class="data__top flex-centered-sides">
-                      <div class="item__title h3">Заголовок заметки</div>
-                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                    </div>
-                    <div class="data__bottom">
-                      <div class="item__cathegory item__text-muted">Заметка</div>
-                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                      <div class="item__is-protected"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Элемент списка end -->
-              <!-- Элемент списка -->
-              <div class="list__item px-4" id="unique-note-id">
-                <div class="item__wrapper p-4 flex-centered-sides">
-                  <!-- Иконка заметки (Желательно svg) -->
-                  <div class="item__icon mr-4"><i class="fas fa-sticky-note"></i></div>
-                  <!-- Небольшое описание -->
-                  <div class="item__data flex-grow-1">
-                    <div class="data__top flex-centered-sides">
-                      <div class="item__title h3">Заголовок заметки</div>
-                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                    </div>
-                    <div class="data__bottom">
-                      <div class="item__cathegory item__text-muted">Заметка</div>
-                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                      <div class="item__is-protected"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Элемент списка end -->
-              <!-- Элемент списка -->
-              <div class="list__item px-4" id="unique-note-id">
-                <div class="item__wrapper p-4 flex-centered-sides">
-                  <!-- Иконка заметки (Желательно svg) -->
-                  <div class="item__icon mr-4"><i class="fas fa-sticky-note"></i></div>
-                  <!-- Небольшое описание -->
-                  <div class="item__data flex-grow-1">
-                    <div class="data__top flex-centered-sides">
-                      <div class="item__title h3">Заголовок заметки</div>
-                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                    </div>
-                    <div class="data__bottom">
-                      <div class="item__cathegory item__text-muted">Заметка</div>
-                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                      <div class="item__is-protected"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Элемент списка end -->
-              <!-- Элемент списка -->
-              <div class="list__item px-4" id="unique-note-id">
-                <div class="item__wrapper p-4 flex-centered-sides">
-                  <!-- Иконка заметки (Желательно svg) -->
-                  <div class="item__icon mr-4"><i class="fas fa-sticky-note"></i></div>
-                  <!-- Небольшое описание -->
-                  <div class="item__data flex-grow-1">
-                    <div class="data__top flex-centered-sides">
-                      <div class="item__title h3">Заголовок заметки</div>
-                      <span class="item__modify-date item__text-muted ml-5">Вчера</span>
-                    </div>
-                    <div class="data__bottom">
-                      <div class="item__cathegory item__text-muted">Заметка</div>
-                      <!-- Значок "защищено", если заметка имеет защиту (Желательно svg) -->
-                      <div class="item__is-protected"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Элемент списка end -->
-            </div>
-            <div class="notes__add-note-button"></div>
-          </div>
+    <!-- Игра-->
+    <div class="container__full-screen container__full-screen_center hide" id="game-zone">
+      <!-- Оверлей с игровой информацией-->
+      <div class="full-screen" id="UI">
+        <div id="UI-left">
+          <div id="timer"><span>Время: </span><span class="data"></span></div>
+          <div id="hp"><span>HP: </span><span class="data"></span></div>
+          <div id="eaten-cheese"><img src="img/Cheese.png" width="40" height="40"><span class="data"></span></div>
+        </div>
+        <div id="UI-right">
+          <div id="player-name"><span>Никнейм: </span><span class="data"></span></div>
+          <div id="mute-status"><span class="data">Выключить звук - SHIFT</span></div>
         </div>
       </div>
-
-      <!-- Центральная часть для редактора -->
-      <div class="notes__collapsing-wrapper d-flex hidden" id="js-collapseMiddle">
-        <div class="notes__editor-wrapper flex-grow-1">
-          <div class="notes__editor d-flex flex-column">
-            <!-- Редактор Заголовка заметки -->
-            <div class="editor__input-wrapper mb-3">
-              <h4 class="m-0 w-placeholder" id="js-editorTitle" contenteditable="true" data-text="Название"></h4>
-            </div>
-            <!-- Редактор тела зметки -->
-            <div class="editor__input-wrapper d-flex flex-grow-1 position-relative">
-              <!-- Фрейм для ввода-редактирования текста -->
-              <iframe class="w-placeholder flex-grow-1 editor__frame" id="js-editorFrame" contenteditable="true"
-                data-text="Контент"></iframe>
-              <!-- Инструменты форматирования -->
-              <div class="editor__bottom-tool-wrapper hidden" id="js-formattingTools">
-                <div class="bottom-tool__formatting-tools d-flex flex-grow-1">
-                  <div class="editor__formatting-tool" id="js-bold" data-action="bold"><i class="fas fa-bold"></i></div>
-                  <div class="editor__formatting-tool" id="js-italic" data-action="italic"><i class="fas fa-italic"></i>
-                  </div>
-                  <div class="editor__formatting-tool" id="js-underline" data-action="underline"><i
-                      class="fas fa-underline"></i></div>
-                </div>
-
-                <div class="bottom-tool__settings-tools d-flex">
-                  <div class="editor__settings-tool" id="js-openSettings"><i class="fas fa-cog"></i></div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <!-- Канвас игры-->
+      <canvas></canvas>
+    </div>
+    <!-- Первый экран с выводом инструкции и выбором персонажа-->
+    <div class="container__full-screen container__full-screen_center hide" id="game-menu">
+      <div class="popup">
+        <!-- Инструкция по игре-->
+        <div id="instruction">
+          <h2>Том и Джерри</h2>
+          <p>Добро пожаловать в игру "Том и Джерри"! Цель данной игры - съесть как можно больше сыра, стараясь уворачиваться от врагов - котов</p>
+          <p>Изначально у вас 100 HP. За каждый съеденный кусочек сыра дается 10 HP. У игрока не может быть больше 100 HP. HP уменьшается каждую секунду игрового времени на одну единицу</p>
+          <p>За контакт с котом отнимается 20 HP и 30 HP за каждую полную секунду контакта</p>
         </div>
-      </div>
-
-      <!-- Правая часть с настройками заметки -->
-      <div class="notes__collapsing-wrapper notes__collapsing-wrapper_inside d-flex hidden" id="js-collapseRight">
-        <div class="notes__settins-wrapper d-flex flex-grow-1">
-          <div class="notes__settings flex-grow-1">
-            <div class="setting__item-wrapper settings__top d-flex">
-              <div class="top__icon" id="js-closeSettings"><i class="fas fa-caret-left"></i></div>
-              <div class="top__title flex-grow-1 h3 m-0 text-center">Настройки</div>
-            </div>
-            <div class="setting__item-wrapper">
-              <div class="control__title h4 m-0">Защищенная заметка</div>
-              <div class="control__switch" id="js-isProtect"></div>
-            </div>
-          </div>
+        <!-- Выбор персонажа-->
+        <div id="characters">
+          <div class="character" data-character="Jerry"><img src="img/Jerry.jpg" alt="Jerry" width="100px"></div>
+          <div class="character" data-character="Tuffy"><img src="img/Tuffy.png" alt="Tuffy" width="100px"></div>
         </div>
+        <!-- Ввод никнейма-->
+        <div id="nickname">
+          <h2>Введите свой никнейм</h2>
+          <input type="text" name="nickname" placeholder="Ваш Никнейм" required>
+        </div>
+        <input id="js-start" type="button" value="Начать игру" disabled>
       </div>
     </div>
-    <!-- Основная часть приложенния end -->
-  </div>
-  <!-- Контейнер приложения end -->
-
-  <script src="js/main.js"></script>
-</body>
-
+    <!-- Экран с выводом результатов-->
+    <div class="container__full-screen container__full-screen_center hide" id="score-screen">
+      <div class="popup">
+        <h2>Таблица счета</h2>
+        <table>
+          <tr>
+            <th>Никнейм</th>
+            <th>Счет</th>
+          </tr>
+          <tr>
+            <td>Игрок номер 1</td>
+            <td>1000</td>
+          </tr>
+          <tr>
+            <td>Игрок номер 2</td>
+            <td>800</td>
+          </tr>
+        </table>
+        <input id="js-restart" type="button" value="Начать заново">
+      </div>
+    </div>
+    <div class="container__full-screen container__full-screen_center hide" id="pause-screen">
+      <h1>Пауза</h1>
+      <p>Для возобновления игры нажмите Esc</p>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
 </html>
