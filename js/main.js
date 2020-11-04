@@ -33,6 +33,9 @@ class EntityImage {
   get w() {
     return this.#w;
   }
+  get h() {
+    return this.#h;
+  }
 
   // Получить картинку
   getRenderData() {
@@ -246,13 +249,28 @@ class Coords {
 class SimpleObject {
 
   constructor( resourceKey, x = 0, y = window.gameData.baseLine ) {
-    this.coords = new Coords( x, y );
     this.img = gameResources[ resourceKey ];
+    this.coords = new Coords( x, y - this.img.h );
+  }
+
+  get width() {
+    return this.img.w;
+  }
+  get height() {
+    return this.img.h;
   }
 
   render() {
     let rd = this.img.getRenderData();
-    window.game.ctx.drawImage( rd.img, rd.sx || 0, rd.sy || 0, rd.sw, rd.sh, this.coords.x + window.game.state.globalLeftOffset, this.coords.y - rd.dh, rd.dw, rd.dh );
+    window.game.ctx.drawImage( rd.img,
+      rd.sx || 0,
+      rd.sy || 0,
+      rd.sw,
+      rd.sh,
+      this.coords.x + window.game.state.globalLeftOffset,
+      this.coords.y,
+      rd.dw,
+      rd.dh );
   }
 
 }
@@ -261,7 +279,7 @@ class CollectableItem extends SimpleObject {
 
   hillEffect = 10;
 
-  constructor( resourceKey, x = 0, y = window.gameData.baseLine + 100 ) {
+  constructor( resourceKey, x = 0, y = window.gameData.baseLine + 80 ) {
     super( resourceKey, x, y );
   }
 
@@ -284,6 +302,13 @@ class Entity {
 
   constructor( x = 0, y = 0 ) {
     this.coords = new Coords( x, y );
+  }
+
+  get width() {
+    return this.state[ this.currentState ].w;
+  }
+  get height() {
+    return this.state[ this.currentState ].h;
   }
 
   setSprite( entityKey, entityState ) {
@@ -347,8 +372,11 @@ class Player extends Entity {
     return this.#hp;
   }
 
-  get width() {
-    return this.state[ this.currentState ].w;
+  checkCollision( entity ) {
+    return ( entity.coords.x + window.game.state.globalLeftOffset ) <= ( this.coords.x + this.width )
+      && ( ( entity.coords.x + window.game.state.globalLeftOffset ) + entity.width ) >= this.coords.x
+      && entity.coords.y <= ( this.coords.y + this.height )
+      && ( entity.coords.y + entity.height ) >= this.coords.y;
   }
 
 }
@@ -678,11 +706,25 @@ class Game {
     /**
      * Обновляем собираемые предметы
      */
+    for ( let i = 0; i < this.collectableItem.length; i++ ) {
+      if ( this.player.checkCollision( this.collectableItem[ i ] ) ) {
+        this.#deleteItem( this.collectableItem, i );
+        this.player.hp += 20;
+        this.player.eatenCheese++;
+        break;
+      }
+    }
 
 
     /**
      * Обновляем возвышенности
      */
+  }
+
+  #deleteItem( where, ind ) {
+    for ( let i = ind; i < where.length - 1; i++ )
+      where[ i ] = where[ i + 1 ];
+    where.length--;
   }
 
   #render() {
@@ -706,8 +748,8 @@ class Game {
       this.ctx.drawImage( bgrd.img, this.#BG[ i ].coords.x, 0, this.canvWidth, this.canvHeight );
     }
 
-    for ( let i = 0; i < 5; i++ ) this.hills[ i ].render();
-    for ( let i = 0; i < 5; i++ ) this.collectableItem[ i ].render();
+    for ( let i = 0; i < this.hills.length; i++ ) this.hills[ i ].render();
+    for ( let i = 0; i < this.collectableItem.length; i++ ) this.collectableItem[ i ].render();
 
     this.player.render( this.#time.dt );
   }
