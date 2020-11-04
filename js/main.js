@@ -288,7 +288,7 @@ class CollectableItem extends SimpleObject {
 class Hill extends SimpleObject {
 
   get surfaceY() {
-    return this.coords.y + this.img.height - 0;
+    return this.coords.y + this.img.h - 280;
   }
 
 }
@@ -363,6 +363,13 @@ class Player extends Entity {
   direction = 1;
   currentState = 'idle';
   jumpState = { isJump: false, fall: false, jump: false };
+  upperJumpPoint = 100;
+  baseLine;
+
+  constructor( ...param ) {
+    super( ...param );
+    this.baseLine = window.gameData.baseLine;
+  }
 
   set hp( v ) {
     this.#hp = ( v > 100 ? 100 : v < 0 ? 0 : v );
@@ -370,6 +377,11 @@ class Player extends Entity {
 
   get hp() {
     return this.#hp;
+  }
+
+  isAboutHill( entity ) {
+    return ( entity.coords.x + window.game.state.globalLeftOffset ) <= ( this.coords.x + this.width )
+      && ( ( entity.coords.x + window.game.state.globalLeftOffset ) + entity.width ) >= this.coords.x;
   }
 
   checkCollision( entity ) {
@@ -678,20 +690,40 @@ class Game {
     }
 
     if ( this.player.jumpState.isJump && this.player.jumpState.jump ) {
-      if ( this.player.coords.y <= 100 ) {
+      if ( this.player.coords.y <= this.player.upperJumpPoint ) {
         this.player.jumpState.jump = false;
         this.player.jumpState.fall = true;
       } else {
         this.player.coords.y -= this.player.jumpSpeed * ( this.#time.dt / 1000 ) * this.#jumpK( this.player.coords.y );
       }
     } else if ( this.player.jumpState.isJump && this.player.jumpState.fall ) {
-      if ( this.player.coords.y >= window.gameData.baseLine ) {
+      if ( this.player.coords.y >= this.player.baseLine ) {
         this.player.jumpState.jump = false;
         this.player.jumpState.fall = false;
         this.player.jumpState.isJump = false;
-        this.player.coords.y = window.gameData.baseLine;
+        this.player.coords.y = this.player.baseLine;
       } else {
         this.player.coords.y += this.player.jumpSpeed * ( this.#time.dt / 1000 ) * this.#jumpK( this.player.coords.y );
+      }
+    }
+
+    for ( let i = 0; i < this.hills.length; i++ ) {
+      if ( this.player.isAboutHill( this.hills[ i ] ) ) {
+        if ( this.hills[ i ].surfaceY >= this.player.coords.y ) {
+          this.player.baseLine = this.hills[ i ].surfaceY;
+          this.player.upperJumpPoint = 100;
+        }
+        else {
+          this.player.upperJumpPoint = this.hills[ i ].surfaceY + 50;
+        }
+        break;
+      } else {
+        if ( this.player.baseLine !== window.gameData.baseLine ) {
+          this.player.jumpState.isJump = true;
+          this.player.jumpState.fall = true;
+          this.player.baseLine = window.gameData.baseLine;
+        }
+        this.player.upperJumpPoint = 100;
       }
     }
 
