@@ -33,6 +33,9 @@ class EntityImage {
   get w() {
     return this.#w;
   }
+  get h() {
+    return this.#h;
+  }
 
   // Получить картинку
   getRenderData() {
@@ -246,13 +249,28 @@ class Coords {
 class SimpleObject {
 
   constructor( resourceKey, x = 0, y = window.gameData.baseLine ) {
-    this.coords = new Coords( x, y );
     this.img = gameResources[ resourceKey ];
+    this.coords = new Coords( x, y - this.img.h );
+  }
+
+  get width() {
+    return this.img.w;
+  }
+  get height() {
+    return this.img.h;
   }
 
   render() {
     let rd = this.img.getRenderData();
-    window.game.ctx.drawImage( rd.img, rd.sx || 0, rd.sy || 0, rd.sw, rd.sh, this.coords.x + window.game.state.globalLeftOffset, this.coords.y - rd.dh, rd.dw, rd.dh );
+    window.game.ctx.drawImage( rd.img,
+      rd.sx || 0,
+      rd.sy || 0,
+      rd.sw,
+      rd.sh,
+      this.coords.x + window.game.state.globalLeftOffset,
+      this.coords.y,
+      rd.dw,
+      rd.dh );
   }
 
 }
@@ -261,7 +279,7 @@ class CollectableItem extends SimpleObject {
 
   hillEffect = 10;
 
-  constructor( resourceKey, x = 0, y = window.gameData.baseLine + 100 ) {
+  constructor( resourceKey, x = 0, y = window.gameData.baseLine + 80 ) {
     super( resourceKey, x, y );
   }
 
@@ -270,7 +288,7 @@ class CollectableItem extends SimpleObject {
 class Hill extends SimpleObject {
 
   get surfaceY() {
-    return this.coords.y + this.img.height - 0;
+    return this.coords.y + this.img.h - 280;
   }
 
 }
@@ -284,6 +302,13 @@ class Entity {
 
   constructor( x = 0, y = 0 ) {
     this.coords = new Coords( x, y );
+  }
+
+  get width() {
+    return this.state[ this.currentState ].w;
+  }
+  get height() {
+    return this.state[ this.currentState ].h;
   }
 
   setSprite( entityKey, entityState ) {
@@ -338,6 +363,15 @@ class Player extends Entity {
   direction = 1;
   currentState = 'idle';
   jumpState = { isJump: false, fall: false, jump: false };
+  upperJumpPoint = 100;
+  baseLine;
+  isOnHill = false;
+  isUnderHill = false;
+
+  constructor( ...param ) {
+    super( ...param );
+    this.baseLine = window.gameData.baseLine;
+  }
 
   set hp( v ) {
     this.#hp = ( v > 100 ? 100 : v < 0 ? 0 : v );
@@ -347,8 +381,16 @@ class Player extends Entity {
     return this.#hp;
   }
 
-  get width() {
-    return this.state[ this.currentState ].w;
+  isAboutHill( entity ) {
+    return ( entity.coords.x + window.game.state.globalLeftOffset ) <= ( this.coords.x + this.width )
+      && ( ( entity.coords.x + window.game.state.globalLeftOffset ) + entity.width ) >= this.coords.x;
+  }
+
+  checkCollision( entity ) {
+    return ( entity.coords.x + window.game.state.globalLeftOffset ) <= ( this.coords.x + this.width )
+      && ( ( entity.coords.x + window.game.state.globalLeftOffset ) + entity.width ) >= this.coords.x
+      && entity.coords.y <= ( this.coords.y + this.height )
+      && ( entity.coords.y + entity.height ) >= this.coords.y;
   }
 
 }
@@ -650,20 +692,53 @@ class Game {
     }
 
     if ( this.player.jumpState.isJump && this.player.jumpState.jump ) {
-      if ( this.player.coords.y <= 100 ) {
+      if ( this.player.coords.y <= this.player.upperJumpPoint ) {
         this.player.jumpState.jump = false;
         this.player.jumpState.fall = true;
       } else {
         this.player.coords.y -= this.player.jumpSpeed * ( this.#time.dt / 1000 ) * this.#jumpK( this.player.coords.y );
       }
     } else if ( this.player.jumpState.isJump && this.player.jumpState.fall ) {
-      if ( this.player.coords.y >= window.gameData.baseLine ) {
+      if ( this.player.coords.y >= this.player.baseLine ) {
         this.player.jumpState.jump = false;
         this.player.jumpState.fall = false;
         this.player.jumpState.isJump = false;
-        this.player.coords.y = window.gameData.baseLine;
+        this.player.coords.y = this.player.baseLine;
       } else {
         this.player.coords.y += this.player.jumpSpeed * ( this.#time.dt / 1000 ) * this.#jumpK( this.player.coords.y );
+      }
+    }
+
+
+    /**
+     * Обновляем возвышенности
+     */
+    this.player.isOnHill = false;
+    this.player.isUnderHill = false;
+    for ( let i = 0; i < this.hills.length; i++ ) {
+      if ( this.player.isAboutHill( this.hills[ i ] ) ) {
+        if ( ( this.hills[ i ].surfaceY + 40 ) >= this.player.coords.y ) {
+          this.player.baseLine = this.hills[ i ].surfaceY;
+          this.player.upperJumpPoint = 100;
+          this.player.isOnHill = true;
+        }
+        else {
+          this.player.upperJumpPoint = this.hills[ i ].surfaceY + 50;
+          this.player.isUnderHill = true;
+        }
+        break;
+      }
+    }
+
+    if ( !this.player.isUnderHill ) {
+      this.player.upperJumpPoint = 100;
+    }
+
+    if ( !this.player.isOnHill ) {
+      if ( this.player.baseLine !== window.gameData.baseLine ) {
+        this.player.baseLine = window.gameData.baseLine;
+        this.player.jumpState.isJump = true;
+        this.player.jumpState.fall = true;
       }
     }
 
@@ -678,11 +753,20 @@ class Game {
     /**
      * Обновляем собираемые предметы
      */
+    for ( let i = 0; i < this.collectableItem.length; i++ ) {
+      if ( this.player.checkCollision( this.collectableItem[ i ] ) ) {
+        this.#deleteItem( this.collectableItem, i );
+        this.player.hp += 20;
+        this.player.eatenCheese++;
+        break;
+      }
+    }
+  }
 
-
-    /**
-     * Обновляем возвышенности
-     */
+  #deleteItem( where, ind ) {
+    for ( let i = ind; i < where.length - 1; i++ )
+      where[ i ] = where[ i + 1 ];
+    where.length--;
   }
 
   #render() {
@@ -706,8 +790,8 @@ class Game {
       this.ctx.drawImage( bgrd.img, this.#BG[ i ].coords.x, 0, this.canvWidth, this.canvHeight );
     }
 
-    for ( let i = 0; i < 5; i++ ) this.hills[ i ].render();
-    for ( let i = 0; i < 5; i++ ) this.collectableItem[ i ].render();
+    for ( let i = 0; i < this.hills.length; i++ ) this.hills[ i ].render();
+    for ( let i = 0; i < this.collectableItem.length; i++ ) this.collectableItem[ i ].render();
 
     this.player.render( this.#time.dt );
   }
