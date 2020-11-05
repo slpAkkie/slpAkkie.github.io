@@ -190,8 +190,8 @@ window.gameResources = {
   } ),
   'hill': new EntityImage( {
     'path': '..\\img\\Chair.png',
-    'width': 400,
-    'height': 400,
+    'width': 180,
+    'height': 350,
   } ),
   'cheese': new EntityImage( {
     'path': '..\\img\\Cheese.png',
@@ -288,7 +288,7 @@ class CollectableItem extends SimpleObject {
 class Hill extends SimpleObject {
 
   get surfaceY() {
-    return this.coords.y + this.img.h - 280;
+    return this.coords.y + this.img.h - 250;
   }
 
 }
@@ -723,11 +723,16 @@ class Game {
           this.player.isOnHill = true;
         }
         else {
-          this.player.upperJumpPoint = this.hills[ i ].surfaceY + 50;
+          this.player.upperJumpPoint = this.hills[ i ].surfaceY + 80;
           this.player.isUnderHill = true;
         }
         break;
       }
+    }
+
+    if ( this.pressedKey.DOWN ) {
+      this.player.isOnHill = false;
+      this.player.isUnderHill = true;
     }
 
     if ( !this.player.isUnderHill ) {
@@ -919,6 +924,9 @@ function keypress( e ) {
       case 'KeyD':
         window.game.pressedKey.RIGHT = true;
         break;
+      case 'KeyS':
+        window.game.pressedKey.DOWN = true;
+        break;
       case 'Space':
       case 'KeyW':
         window.game.pressedKey.UP = true;
@@ -939,6 +947,9 @@ function keypress( e ) {
         break;
       case 'KeyD':
         window.game.pressedKey.RIGHT = false;
+        break;
+      case 'KeyS':
+        window.game.pressedKey.DOWN = false;
         break;
       case 'Space':
       case 'KeyW':
