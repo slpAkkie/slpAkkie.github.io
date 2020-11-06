@@ -369,6 +369,7 @@ class Player extends Entity {
   baseLine;
   isOnHill = false;
   isUnderHill = false;
+  entityCollisionWith = null;
 
   constructor( ...param ) {
     super( ...param );
@@ -393,6 +394,13 @@ class Player extends Entity {
       && ( ( entity.coords.x + window.game.state.globalLeftOffset ) + entity.width ) >= this.coords.x
       && entity.coords.y <= ( this.coords.y + this.height )
       && ( entity.coords.y + entity.height ) >= this.coords.y;
+  }
+
+  checkCollisionWithEnemy( enemy ) {
+    return ( enemy.coords.x ) <= ( this.coords.x + this.width )
+      && ( ( enemy.coords.x ) + enemy.width ) >= this.coords.x
+      && enemy.coords.y <= ( this.coords.y + this.height )
+      && ( enemy.coords.y + enemy.height ) >= this.coords.y;
   }
 
 }
@@ -779,6 +787,22 @@ class Game {
         this.player.eatenCheese++;
         break;
       }
+    }
+
+    let isEntityCollision = false;
+    for ( let i = 0; i < this.enemies.length; i++ ) {
+      if ( this.player.checkCollisionWithEnemy( this.enemies[ i ] ) ) {
+        if ( ( this.player.entityCollisionWith !== this.enemies[ i ] ) ) {
+          this.player.entityCollisionWith = this.enemies[ i ];
+          this.player.hp -= this.player.entityCollisionWith.damage;
+        }
+        isEntityCollision = true;
+        break;
+      }
+    }
+
+    if ( !isEntityCollision ) {
+      this.player.entityCollisionWith = null;
     }
   }
 
