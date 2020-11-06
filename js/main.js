@@ -760,8 +760,8 @@ class Game {
      */
     for ( let i = 0; i < this.enemies.length; i++ ) {
       this.enemies[ i ].coords.x += this.enemies[ i ].direction * this.enemies[ i ].speed * ( this.#time.dt / 1000 );
-      if ( ( this.state.side === 'center' ) && this.pressedKey.isMoving && ( this.player.direction === 1 ) ) {
-        this.enemies[ i ].coords.x += this.enemies[ i ].direction * this.player.speed * ( this.#time.dt / 1000 );
+      if ( ( this.state.side === 'center' ) && this.pressedKey.isMoving ) {
+        this.enemies[ i ].coords.x += -this.player.direction * this.player.speed * ( this.#time.dt / 1000 );
       }
       if ( this.enemies[ i ].coords.x + this.enemies[ i ].width < this.state.globalLeftOffset ) {
         this.enemies[ i ].coords.x = this.fullGameWidth;
