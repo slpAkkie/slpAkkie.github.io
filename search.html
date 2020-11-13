@@ -27,15 +27,170 @@
         </div>
       </nav>
       <!-- Блок с логотипом и именем брэнда-->
-      <main>
-        <div class="page-container text-center"><img class="logo" src="img/logo.png" alt="logo">
-          <h1>CitiesNearby</h1>
-          <p>С нами города стали еще ближе</p>
-          <div class="angle-down text-blue"><i class="fas fa-angle-down"></i></div>
+      <main class="small">
+        <div class="page-container">
+          <div class="c-row">
+            <div class="c-col"><img class="logo" src="img/logo.png" alt="logo"></div>
+            <div class="c-col">
+              <h1>CitiesNearby</h1>
+              <p>С нами города стали еще ближе</p>
+            </div>
+          </div>
+          <div class="c-row">
+            <div class="angle-down text-blue"><i class="fas fa-angle-down"></i></div>
+          </div>
         </div>
       </main>
     </header>
     <main class="site-content" id="js-ajax-content">
+      <!-- Блок поиска рейсов-->
+      <section class="search">
+        <div class="page-container">
+          <h2 class="section-title h-decoration h-center"><span>Поиск рейсов</span></h2>
+          <main class="dark">
+            <form class="col align-content-center" method="GET">
+              <div class="row form-fields">
+                <div class="col">
+                  <label>От куда
+                    <select id="from" name="from">
+                      <option value="Москва">Москва</option>
+                      <option value="Казань">Казань</option>
+                    </select>
+                  </label>
+                  <label>Куда
+                    <select id="from" name="to">
+                      <option value="Москва">Москва</option>
+                      <option value="Казань">Казань</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="col">
+                  <label>Вылет
+                    <input id="date-from" type="date" name="date-from">
+                  </label>
+                  <label>Прилет
+                    <input id="date-to" type="date" name="date-to">
+                  </label>
+                  <label>Пассажиров
+                    <input id="passengers" type="number" name="passengers" value="0" min="1" max="48">
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <input type="submit" value="Найти">
+              </div>
+            </form>
+          </main>
+        </div>
+      </section>
+      <!-- Результаты поиска-->
+      <section class="search-results">
+        <div class="page-container">
+          <h2 class="section-title h-decoration h-center"><span>Результаты поиска</span></h2>
+          <div class="flight-card">
+            <div class="row">
+              <div class="col no-gutters aircraft-photo"><img src="img/aircrafts/aircraft-1.jpg" alt="Aircraft"/></div>
+              <div class="col no-gutters flight-body">
+                <div class="row">
+                  <div class="row vertical-center title">
+                    <h6 class="m0">A165DF</h6><i class="separater fas fa-angle-right text-muted"></i><span class="aircraft-name text-muted">Bombardier CRJ200</span>
+                  </div>
+                  <div class="like-flight text-muted"><i class="fas fa-plus"></i></div>
+                </div>
+                <div class="row">
+                  <table>
+                    <tr>
+                      <td>Дата вылета:</td>
+                      <td class="date-1">10.11.20</td>
+                      <td>Время прилета:</td>
+                      <td class="time-1">14:40</td>
+                    </tr>
+                    <tr>
+                      <td>Время вылета:</td>
+                      <td class="time-2">13:30</td>
+                      <td>Время в пути:</td>
+                      <td class="time-3">1:10</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="row justify-content-between">
+                  <h5 class="m0 variety">Вероятость:<span class="data-variety">43%</span></h5>
+                  <h5 class="m0 price">Стоимость:<span class="data-price">6000<i class="fas fa-ruble-sign"></i></span></h5>
+                  <input class="small m0" type="button" value="Бронировать"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flight-card">
+            <div class="row">
+              <div class="col no-gutters aircraft-photo"><img src="img/aircrafts/aircraft-2.jpg" alt="Aircraft"/></div>
+              <div class="col no-gutters flight-body">
+                <div class="row">
+                  <div class="row vertical-center title">
+                    <h6 class="m0">BD632F</h6><i class="separater fas fa-angle-right text-muted"></i><span class="aircraft-name text-muted">Bombardier CRJ200</span>
+                  </div>
+                  <div class="like-flight text-muted"><i class="fas fa-plus"></i></div>
+                </div>
+                <div class="row">
+                  <table>
+                    <tr>
+                      <td>Дата вылета:</td>
+                      <td class="date-1">11.11.20</td>
+                      <td>Время прилета:</td>
+                      <td class="time-1">09:00</td>
+                    </tr>
+                    <tr>
+                      <td>Время вылета:</td>
+                      <td class="time-2">12:00</td>
+                      <td>Время в пути:</td>
+                      <td class="time-3">3:00</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="row justify-content-between">
+                  <h5 class="m0 variety">Вероятость:<span class="data-variety">37%</span></h5>
+                  <h5 class="m0 price">Стоимость:<span class="data-price">8000<i class="fas fa-ruble-sign"></i></span></h5>
+                  <input class="small m0" type="button" value="Бронировать"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flight-card">
+            <div class="row">
+              <div class="col no-gutters aircraft-photo"><img src="img/aircrafts/aircraft-3.jpg" alt="Aircraft"/></div>
+              <div class="col no-gutters flight-body">
+                <div class="row">
+                  <div class="row vertical-center title">
+                    <h6 class="m0">IDK83F</h6><i class="separater fas fa-angle-right text-muted"></i><span class="aircraft-name text-muted">Bombardier CRJ200</span>
+                  </div>
+                  <div class="like-flight text-muted"><i class="fas fa-plus"></i></div>
+                </div>
+                <div class="row">
+                  <table>
+                    <tr>
+                      <td>Дата вылета:</td>
+                      <td class="date-1">12.11.20</td>
+                      <td>Время прилета:</td>
+                      <td class="time-1">15:20</td>
+                    </tr>
+                    <tr>
+                      <td>Время вылета:</td>
+                      <td class="time-2">18:10</td>
+                      <td>Время в пути:</td>
+                      <td class="time-3">2:50</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="row justify-content-between">
+                  <h5 class="m0 variety">Вероятость:<span class="data-variety">68%</span></h5>
+                  <h5 class="m0 price">Стоимость:<span class="data-price">3000<i class="fas fa-ruble-sign"></i></span></h5>
+                  <input class="small m0" type="button" value="Бронировать"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- Подвал сайта-->
     <footer class="site-footer dark bg-black-blue-grad">
