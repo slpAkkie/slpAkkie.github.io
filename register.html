@@ -11,8 +11,7 @@
     <!-- Шапка сайта-->
     <header class="site-header">
       <!-- Навигационное меню-->
-      <nav class="nav-top dark">
-        <!-- Разметка меню для десктопной версии-->
+      <nav class="dark">
         <div class="page-container">
           <!-- Блок под навигицаю-->
           <div class="nav-top__container row d-flex justify-content-between">
@@ -28,10 +27,11 @@
         </div>
       </nav>
       <!-- Блок с логотипом и именем брэнда-->
-      <main class="brand">
-        <div class="page-container"><img class="logo d-block" src="img/logo.png" alt="logo">
-          <h1 class="company-name text-center">CitiesNearby</h1>
-          <p class="motto text-center">С нами города стали еще ближе</p><span class="angle-down d-block text-center text-blue"><i class="fas fa-angle-down"></i></span>
+      <main>
+        <div class="page-container text-center"><img class="logo" src="img/logo.png" alt="logo">
+          <h1>CitiesNearby</h1>
+          <p>С нами города стали еще ближе</p>
+          <div class="angle-down text-blue"><i class="fas fa-angle-down"></i></div>
         </div>
       </main>
     </header>
@@ -40,32 +40,34 @@
     <!-- Подвал сайта-->
     <footer class="site-footer dark">
       <!-- Основная часть-->
-      <main class="page-container justify-content-center-sm">
-        <div class="row justify-content-between">
-          <!-- Блок с лого, именем брэнда и копирайтом-->
-          <div class="col branding">
-            <div class="row">
-              <div class="brand"><img class="logo" src="img/logo.png" alt="logo"></div>
-              <h3 class="company-name text-muted">CitiesNearby</h3>
+      <main class="justify-content-center-sm">
+        <div class="page-container">
+          <div class="row justify-content-between">
+            <!-- Блок с лого, именем брэнда и копирайтом-->
+            <div class="col branding">
+              <div class="row">
+                <div class="brand"><img class="logo" src="img/logo.png" alt="logo"></div>
+                <h3 class="company-name text-muted">CitiesNearby</h3>
+              </div>
+              <div class="row">
+                <p class="copyright text-muted text-bold">CitiesNearby &copy; 2020</p>
+              </div>
             </div>
-            <div class="row">
-              <p class="copyright text-muted text-bold">CitiesNearby &copy; 2020</p>
+            <div class="col">
+              <!-- Номер телефона--><span class="phone row row-center"><i class="fas fa-phone"></i><span class="phone__phone-number test-0-phone"><a href="tel:8 (800) 100-10-10">8 (800) 100-10-10</a></span></span>
             </div>
           </div>
-          <div class="col">
-            <!-- Номер телефона--><span class="phone row row-center"><i class="fas fa-phone"></i><span class="phone__phone-number test-0-phone"><a href="tel:8 (800) 100-10-10">8 (800) 100-10-10</a></span></span>
-          </div>
+          <!-- Блок под навигицаю-->
+          <nav class="nav-bot row">
+            <!-- Меню навигации-->
+            <ul class="nav-menu__list d-flex justify-content-between unmarked">
+              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-1" href="#stock">Акции</a></li>
+              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-2" href="search.html">Поиск</a></li>
+              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-3" href="#flight-registration">Регистрация на рейс</a></li>
+              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-4" href="profile.html">Личный кабинет</a></li>
+            </ul>
+          </nav>
         </div>
-        <!-- Блок под навигицаю-->
-        <nav class="nav-bot row">
-          <!-- Меню навигации-->
-          <ul class="nav-menu__list d-flex justify-content-between unmarked">
-            <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-1" href="#stock">Акции</a></li>
-            <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-2" href="search.html">Поиск</a></li>
-            <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-3" href="#flight-registration">Регистрация на рейс</a></li>
-            <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-4" href="profile.html">Личный кабинет</a></li>
-          </ul>
-        </nav>
       </main>
       <!-- Блок копирайтной информации-->
       <div class="row bg-blue d-none-md">
