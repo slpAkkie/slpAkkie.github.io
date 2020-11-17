@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=400">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <title>СitiesNearby</title>
@@ -117,7 +117,7 @@
         <div class="page-container">
           <h2 class="section-title h-decoration h-center"><span>Поиск рейсов</span></h2>
           <main class="dark">
-            <form class="col align-content-center" method="GET">
+            <form class="col align-content-center" action="search.html" method="GET">
               <div class="row form-fields">
                 <div class="col">
                   <label>От куда
@@ -141,7 +141,7 @@
                     <input id="date-to" type="date" name="date-to">
                   </label>
                   <label>Пассажиров
-                    <input id="passengers" type="number" name="passengers" value="0" min="1" max="48">
+                    <input id="passengers" type="number" name="passengers" value="1" min="1" max="48">
                   </label>
                 </div>
               </div>
