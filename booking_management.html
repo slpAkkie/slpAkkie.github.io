@@ -43,6 +43,227 @@
       </main>
     </header>
     <main class="site-content" id="js-ajax-content">
+      <!-- Заголовок-->
+      <section class="booking-management-header one no-border">
+        <div class="page-container">
+          <div class="row col-lg justify-content-between align-items-center">
+            <h3 class="heading row m0 justify-content-center-lg text-center-sm">Информация о бронировании
+              <div class="booking-code text-muted"><i class="fas fa-angle-right d-none-md"></i>№<span class="data">TESTA</span></div>
+            </h3>
+            <h2 class="price m0">15000<i class="fas fa-ruble-sign"></i></h2>
+          </div>
+        </div>
+      </section>
+      <!-- Информация о полете Туда-->
+      <section class="there no-border one">
+        <div class="page-container">
+          <h2 class="section-title h-decoration"><span>Туда</span></h2>
+          <main class="lh-offset-small">
+            <div class="flight-card">
+              <div class="row">
+                <div class="col no-gutters flight-body w100">
+                  <div class="row">
+                    <div class="row vertical-center title">
+                      <h6 class="m0">A165DF</h6><i class="separater fas fa-angle-right text-muted"></i><span class="aircraft-name text-muted">Bombardier CRJ200</span>
+                    </div>
+                    <div class="like-flight text-muted"><i class="fas fa-minus"></i></div>
+                  </div>
+                  <div class="row">
+                    <table>
+                      <tr>
+                        <td>Город вылета:</td>
+                        <td class="city-1">Moscow</td>
+                        <td>Город назначения:</td>
+                        <td class="city-2">Kazan</td>
+                      </tr>
+                      <tr>
+                        <td>Аэропорт вылета:</td>
+                        <td class="aitport-1">Sheremetevo</td>
+                        <td>Аэропорт назначения:</td>
+                        <td class="aitport-2">Kazan</td>
+                      </tr>
+                      <tr>
+                        <td>Дата вылета:</td>
+                        <td class="date-1">10.11.20</td>
+                        <td>Время прилета:</td>
+                        <td class="time-1">14:40</td>
+                      </tr>
+                      <tr>
+                        <td>Время вылета:</td>
+                        <td class="time-2">13:30</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="row justify-content-between">
+                    <h5 class="m0 variety">Вероятость:<span class="data-variety">43%</span></h5>
+                    <h5 class="m0 price">Стоимость:<span class="data-price">6000<i class="fas fa-ruble-sign"></i></span></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </section>
+      <!-- Информация о полете Обратно-->
+      <section class="back no-border one">
+        <div class="page-container">
+          <h2 class="section-title h-decoration"><span>Обратно</span></h2>
+          <main class="lh-offset-small">
+            <div class="flight-card">
+              <div class="row">
+                <div class="col no-gutters flight-body w100">
+                  <div class="row">
+                    <div class="row vertical-center title">
+                      <h6 class="m0">A165DF</h6><i class="separater fas fa-angle-right text-muted"></i><span class="aircraft-name text-muted">Bombardier CRJ200</span>
+                    </div>
+                    <div class="like-flight text-muted"><i class="fas fa-minus"></i></div>
+                  </div>
+                  <div class="row">
+                    <table>
+                      <tr>
+                        <td>Город вылета:</td>
+                        <td class="city-1">Kazan</td>
+                        <td>Город назначения:</td>
+                        <td class="city-2">Moscow</td>
+                      </tr>
+                      <tr>
+                        <td>Аэропорт вылета:</td>
+                        <td class="aitport-1">Kazan</td>
+                        <td>Аэропорт назначения:</td>
+                        <td class="aitport-2">Sheremetevo</td>
+                      </tr>
+                      <tr>
+                        <td>Дата вылета:</td>
+                        <td class="date-1">11.11.20</td>
+                        <td>Время прилета:</td>
+                        <td class="time-1">14:40</td>
+                      </tr>
+                      <tr>
+                        <td>Время вылета:</td>
+                        <td class="time-2">13:30</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="row justify-content-between">
+                    <h5 class="m0 variety">Вероятость:<span class="data-variety">67%</span></h5>
+                    <h5 class="m0 price">Стоимость:<span class="data-price">9500<i class="fas fa-ruble-sign"></i></span></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </section>
+      <!-- Информация о пассажирах-->
+      <section class="passengers">
+        <div class="page-container">
+          <h2 class="section-title h-decoration"><span>Пассажиры</span></h2>
+          <main class="lh-offset-small">
+            <div class="heading d-flex justify-content-between">
+              <div class="passengers-count text-bold">Кол-во:<span class="data">3</span></div>
+              <div class="add-new-passenger"><a class="accent-link">Добавить пассажира</a></div>
+            </div>
+            <div class="passengers-list">
+              <div class="passenger hidden">
+                <div class="heading d-flex justify-content-between"><span class="fio">Вороненко Витайлий Михайлович</span>
+                  <div class="arrow-icon"><i class="fas fa-angle-down"></i></div>
+                </div>
+                <div class="info with-seats">
+                  <div class="row justify-content-between">
+                    <label class="name">Имя:
+                      <input id="name" type="text" name="name"/>
+                    </label>
+                    <label class="reg-date">Дата регистрации:
+                      <input id="reg-date" type="date" name="reg-date"/>
+                    </label>
+                  </div>
+                  <div class="row justify-content-between">
+                    <label class="name">Фамилия:
+                      <input id="surname" type="text" name="surname"/>
+                    </label>
+                    <label class="doc-num">Имя:
+                      <input id="doc-num" type="text" name="doc-num"/>
+                    </label>
+                  </div>
+                  <div class="row justify-content-between align-items-center">
+                    <label class="seat-there">Место туда:
+                      <input id="surname" type="text" name="seat-there" disabled="disabled"/>
+                    </label>
+                    <label class="seat-back">Место обратно:
+                      <input id="doc-num" type="text" name="seat-back" disabled="disabled"/>
+                    </label>
+                    <button class="small">Занять места</button>
+                  </div>
+                </div>
+              </div>
+              <div class="passenger hidden">
+                <div class="heading d-flex justify-content-between"><span class="fio">Вороненко Алексей Михайлович</span>
+                  <div class="arrow-icon"><i class="fas fa-angle-down"></i></div>
+                </div>
+                <div class="info with-seats">
+                  <div class="row justify-content-between">
+                    <label class="name">Имя:
+                      <input id="name" type="text" name="name"/>
+                    </label>
+                    <label class="reg-date">Дата регистрации:
+                      <input id="reg-date" type="date" name="reg-date"/>
+                    </label>
+                  </div>
+                  <div class="row justify-content-between">
+                    <label class="name">Фамилия:
+                      <input id="surname" type="text" name="surname"/>
+                    </label>
+                    <label class="doc-num">Имя:
+                      <input id="doc-num" type="text" name="doc-num"/>
+                    </label>
+                  </div>
+                  <div class="row justify-content-between align-items-center">
+                    <label class="seat-there">Место туда:
+                      <input id="surname" type="text" name="seat-there" disabled="disabled"/>
+                    </label>
+                    <label class="seat-back">Место обратно:
+                      <input id="doc-num" type="text" name="seat-back" disabled="disabled"/>
+                    </label>
+                    <button class="small">Занять места</button>
+                  </div>
+                </div>
+              </div>
+              <div class="passenger hidden">
+                <div class="heading d-flex justify-content-between"><span class="fio">Вороненко Анна Петровна</span>
+                  <div class="arrow-icon"><i class="fas fa-angle-down"></i></div>
+                </div>
+                <div class="info with-seats">
+                  <div class="row justify-content-between">
+                    <label class="name">Имя:
+                      <input id="name" type="text" name="name"/>
+                    </label>
+                    <label class="reg-date">Дата регистрации:
+                      <input id="reg-date" type="date" name="reg-date"/>
+                    </label>
+                  </div>
+                  <div class="row justify-content-between">
+                    <label class="name">Фамилия:
+                      <input id="surname" type="text" name="surname"/>
+                    </label>
+                    <label class="doc-num">Имя:
+                      <input id="doc-num" type="text" name="doc-num"/>
+                    </label>
+                  </div>
+                  <div class="row justify-content-between align-items-center">
+                    <label class="seat-there">Место туда:
+                      <input id="surname" type="text" name="seat-there" disabled="disabled"/>
+                    </label>
+                    <label class="seat-back">Место обратно:
+                      <input id="doc-num" type="text" name="seat-back" disabled="disabled"/>
+                    </label>
+                    <button class="small">Занять места</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </section>
     </main>
     <!-- Подвал сайта-->
     <footer class="site-footer dark bg-black-blue-grad">
