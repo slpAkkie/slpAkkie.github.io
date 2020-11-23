@@ -2,92 +2,27 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=400">
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <title>СitiesNearby</title>
+    <title>Регистрация</title>
   </head>
-  <body>
-    <!-- Шапка сайта-->
-    <header class="site-header">
-      <!-- Навигационное меню-->
-      <nav class="dark top">
-        <div class="page-container">
-          <!-- Блок под навигицаю-->
-          <div class="nav-top__container row d-flex justify-content-between">
-            <!-- Меню навигации-->
-            <ul class="nav-menu__list d-flex justify-content-between unmarked">
-              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-1" href="/#stock">Акции</a></li>
-              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-2" href="search.html">Поиск</a></li>
-              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-3" href="#flight-registration">Регистрация на рейс</a></li>
-              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-4" href="profile.html">Личный кабинет</a></li>
-            </ul>
-            <!-- Номер телефона--><span class="phone row row-center"><i class="fas fa-phone"></i><span class="phone__phone-number test-0-phone"><a href="tel:8 (800) 100-10-10">8 (800) 100-10-10</a></span></span>
-          </div>
-        </div>
-      </nav>
-      <!-- Блок с логотипом и именем брэнда-->
-      <main>
-        <div class="page-container">
-          <div class="c-row">
-            <div class="c-col"><a href="/"><img class="logo" src="img/logo.png" alt="logo"></a></div>
-            <div class="c-col">
-              <h1>CitiesNearby</h1>
-              <p>С нами города стали еще ближе</p>
-            </div>
-          </div>
-          <div class="c-row">
-            <div class="angle-down text-blue"><i class="fas fa-angle-down"></i></div>
-          </div>
-        </div>
-      </main>
-    </header>
-    <main class="site-content" id="js-ajax-content">
-    </main>
-    <!-- Подвал сайта-->
-    <footer class="site-footer dark bg-black-blue-grad">
-      <!-- Основная часть-->
-      <main class="justify-content-center-sm">
-        <div class="page-container">
-          <div class="row justify-content-between">
-            <!-- Блок с лого, именем брэнда и копирайтом-->
-            <div class="col branding">
-              <div class="row">
-                <div class="brand"><img class="logo" src="img/logo.png" alt="logo"></div>
-                <h3 class="company-name text-muted">CitiesNearby</h3>
-              </div>
-              <div class="row">
-                <p class="copyright text-muted text-bold">CitiesNearby &copy; 2020</p>
-              </div>
-            </div>
-            <div class="col">
-              <!-- Номер телефона--><span class="phone row row-center"><i class="fas fa-phone"></i><span class="phone__phone-number test-0-phone"><a href="tel:8 (800) 100-10-10">8 (800) 100-10-10</a></span></span>
-            </div>
-          </div>
-          <!-- Блок под навигицаю-->
-          <nav class="nav-bot row">
-            <!-- Меню навигации-->
-            <ul class="nav-menu__list d-flex justify-content-between unmarked">
-              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-1" href="/#stock">Акции</a></li>
-              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-2" href="search.html">Поиск</a></li>
-              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-3" href="#flight-registration">Регистрация на рейс</a></li>
-              <li class="nav-menu__item"><a class="nav-menu__link test-0-nav-4" href="profile.html">Личный кабинет</a></li>
-            </ul>
-          </nav>
-        </div>
-      </main>
-      <!-- Блок копирайтной информации-->
-      <div class="row bg-blue d-none-md">
-        <div class="page-container">
-          <ul class="copyright-info d-flex">
-            <li class="unmarked">Сделано для конкурса WorldSkills</li>
-            <li>Использование без согласования автора запрещается</li>
-            <li>Автор - slpAkkie (Shamanin Alexandr)</li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-    <script src="./js/jquery-3.5.1.min.js"></script>
-    <script src="./js/main.js"></script>
+  <body class="login">
+    <div class="login-container col align-items-center">
+      <h2 class="section-title h-decoration h-center"><span>Регистрация</span></h2>
+      <form class="row justify-content-between align-items-center" action="api/register" method="POST">
+        <label for="name">Имя</label>
+        <input id="name" type="text" name="name" placeholder="Ваше имя" required>
+        <label for="surname">Фамилия</label>
+        <input id="surname" type="text" name="surname" placeholder="Ваше фамилия" required>
+        <label for="document_number">Номер документа</label>
+        <input id="document_number" type="text" name="document_number" placeholder="Ваш номер документа" required>
+        <label for="phone">Телефон</label>
+        <input id="phone" type="tel" name="phone" placeholder="Ваш номер телефона" required>
+        <label for="password">Пароль</label>
+        <input id="password" type="password" name="password" placeholder="Придумайте пароль" required>
+        <label for="s-password">Повторите пароль</label>
+        <input id="s-password" type="password" name="s-password" placeholder="Повторите пароль" required>
+        <button class="w100" type="submit">Зарегистрироваться</button>
+      </form>
+    </div>
   </body>
 </html>
