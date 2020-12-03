@@ -220,7 +220,7 @@ section {
 
   transform: scale(.5);
 
-  transition: all .5s ease-out;
+  transition: all .75s ease;
 }
 
 .scrollfect--block[scrollfect-visible=true] {
