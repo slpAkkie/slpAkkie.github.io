@@ -1,0 +1,195 @@
+/*
+  Описание навигационного меню
+  ====================
+*/
+
+nav.header__nav {
+  width: 100%;
+  height: var(--nav-height);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: var(--accent-color);
+
+  color: var(--light-color);
+
+  z-index: 100;
+}
+
+
+
+/*
+  Описания меню ссылок
+  =========================
+*/
+.nav__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100%;
+
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.nav__section {
+  align-items: center;
+}
+
+.nav__section, .nav__menu  {
+  display: flex;
+}
+
+.nav__menu {
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    justify-content: center;
+  }
+}
+
+
+
+.nav__item {
+  margin-right: 25px;
+
+  font-weight: 500;
+}
+
+.nav__phone {
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+
+  .nav__phone {
+    display: none;
+  }
+
+}
+
+
+
+/*
+  Описание Кнопки-бургера
+  =========================
+*/
+.nav__burger {
+  display: none;
+
+  --burger-width: 30px;
+  --burger-height: 20px;
+
+  --burger-line-height: 2px;
+
+  --burger-Y-center: calc(var(--burger-height) / 2 - var(--burger-line-height) / 2);
+
+  width: var(--burger-width);
+  height: var(--burger-height);
+
+  position: relative;
+}
+
+.nav__burger::before,
+.nav__burger::after,
+.burger__line {
+  display: none;
+
+  content: '';
+
+  width: 100%;
+  height: var(--burger-line-height);
+
+  position: absolute;
+  left: 0px;
+
+  background-color: var(--light-color);
+
+  opacity: 1;
+
+  transition: all .3s ease-in-out;
+}
+
+.nav__burger::before {
+  top: calc(var(--burger-height) - var(--burger-line-height));
+}
+
+.nav__burger::after {
+  top: 0px;
+}
+
+.burger__line.burger__line_middle {
+  top: var(--burger-Y-center);
+}
+
+.nav__burger.active .burger__line {
+  opacity: 0;
+}
+
+.nav__burger.active::before,
+.nav__burger.active::after {
+  top: var(--burger-Y-center);
+}
+
+.nav__burger.active::before {
+  transform: rotate(45deg);
+}
+
+.nav__burger.active::after {
+  transform: rotate(-45deg);
+}
+
+
+
+/*
+  Описание Медиа запросов для навигационного меню
+  =========================
+*/
+@media screen and (max-width: 588px) {
+
+  nav.header__nav {
+    height: auto;
+  }
+
+  .nav__burger,
+  .nav__burger::before,
+  .nav__burger::after,
+  .burger__line {
+    display: block;
+  }
+
+  .nav__inner {
+    align-items: center;
+  }
+
+  .nav__menu {
+    display: none;
+
+    margin-top: 15px;
+  }
+
+  .nav__menu.show {
+    display: block;
+  }
+
+  .nav__items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav__item {
+    margin: 10px 0px 10px;
+  }
+
+  .nav__phone {
+    display: block;
+
+    margin: 45px 0 15px 0;
+  }
+
+}

@@ -1,0 +1,78 @@
+@import './nav.css';
+
+
+
+/*
+  Описание шапки сайта
+  ====================
+*/
+
+header {
+  --nav-height: 70px;
+}
+
+
+
+/*
+  Описание главной части шапки сайта
+  ====================
+*/
+
+.header__main {
+  padding-top: var(--nav-height);
+
+  border-bottom: var(--section-border);
+}
+
+.header-main__inner {
+  padding: 30px 0px 60px 0px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  width: 500px;
+}
+
+.header__face {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: right;
+}
+
+.header__face h1 {
+  margin: .25em 0;
+}
+
+.header__face p {
+  margin: .5em 0;
+}
+
+
+
+/*
+  Описание Медиа запросов для навигационного меню
+  =========================
+*/
+@media screen and (max-width: 790px) {
+
+  .header-main__inner {
+    padding-top: 15px;
+    padding-bottom: 25px;
+  }
+
+  .header__logo {
+    display: none;
+  }
+
+  .header__face {
+    width: 100%;
+
+    text-align: center;
+  }
+
+}

@@ -1,1 +1,303 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>ws-module-3</title><link href="/css/chunk-3bce658a.4899b0b7.css" rel="prefetch"><link href="/css/chunk-c0bf22a0.80dbf7c0.css" rel="prefetch"><link href="/js/chunk-3bce658a.30b8371e.js" rel="prefetch"><link href="/js/chunk-bb8c091a.bf6372be.js" rel="prefetch"><link href="/js/chunk-c0bf22a0.190950be.js" rel="prefetch"><link href="/js/chunk-d294544a.999a8d94.js" rel="prefetch"><link href="/css/app.76fe9caf.css" rel="preload" as="style"><link href="/js/app.99c466bf.js" rel="preload" as="script"><link href="/js/chunk-vendors.628e5359.js" rel="preload" as="script"><link href="/css/app.76fe9caf.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but ws-module-3 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/js/chunk-vendors.628e5359.js"></script><script src="/js/app.99c466bf.js"></script></body></html>
+<!--
+  Главная страница сайта CitiesNearby - Landing Page
+
+
+
+  - Author: Alexandr Shamanin <@slpAkkie>
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<!-- Head -->
+
+<head>
+
+  <!-- Мета теги
+  ========================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  <!-- CSS
+  ========================= -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/pages/index.css">
+
+
+
+  <!-- Название страницы
+  ========================= -->
+  <title>Главная страница</title>
+
+</head> <!-- !head -->
+
+
+
+<!-- body -->
+
+<body>
+
+  <!-- App контейнер для VueJS
+  ========================= -->
+  <div id="app">
+
+
+
+    <!-- Шапка сайта
+
+      - Навигация              ->    OK
+      - Основная часть         ->    OK
+    ========================= -->
+    <header id="header">
+
+      <!-- Меню навигации
+
+        Ссылки:
+        - Акции                  ->    OK
+        - Поиск                  ->    OK
+        - Регистрация на рейс    ->    Вопрос: "Куда должна вести ссылка?"
+        - Личный кабинет         ->    OK
+      ========================= -->
+      <nav class="header__nav">
+        <div class="container">
+          <div class="nav__inner">
+
+            <!-- Кнопка-бургер
+            ========================= -->
+            <div class="nav__burger" id="js-burger">
+              <span class="burger__line burger__line_middle"></span>
+            </div> <!-- !nav__burger -->
+
+            <!-- Меню навигации
+            ========================= -->
+            <div class="nav__menu">
+
+              <ul class="nav__section nav__items">
+                <li class="nav__item"><a class="decor-light" href="/#promotions">Акции</a></li>
+                <li class="nav__item"><a class="decor-light" href="/#search">Поиск</a></li>
+                <li class="nav__item"><a class="decor-light" href="#">Регистрация на рейс</a></li>
+                <li class="nav__item"><a class="decor-light" href="/profile.html">Личный кабинет</a></li>
+              </ul> <!-- !nav__items -->
+
+              <div class="nav__section nav__phone">
+                <a class="decor-light" href="tel:8-800-100-10-10">8 (800) 100-10-10</a>
+              </div> <!-- !nav__phone -->
+
+            </div> <!-- !nav__menu -->
+
+          </div>
+        </div>
+      </nav> <!-- !header__nav -->
+
+
+
+      <!-- Основная часть шапки
+
+        - Логотип                ->    OK
+        - Название компании      ->    OK
+        - Слоган                 ->    OK
+      ========================= -->
+      <div class="header__main">
+        <div class="container">
+          <div class="header-main__inner">
+
+            <div class="header__logo img-wrapper">
+              <img src="./assets/img/logo.png" alt="">
+            </div> <!-- header__logo -->
+
+            <div class="header__face">
+              <h1>CitiesNearby</h1>
+              <p>С нами города стали еще ближе</p>
+            </div>
+
+          </div>
+        </div>
+      </div> <!-- !header__main -->
+
+    </header> <!-- !header -->
+
+
+
+    <!-- Основной контент сайта
+
+      - Описание принципов накопления ->    OK
+      - Доверие компании              ->    Отсутствует
+      - Акции                         ->    Отсутствует
+      - Подписка на закрытые акции    ->    Отсутствует
+    ========================= -->
+    <main id="router-view">
+
+      <!-- Описание принципов накопления
+
+        Три анимированных принципа накопления
+        - Выбрать удобную дату перелета            ->    OK
+        - Накопить больше 50% бронирования на рейс ->    OK
+        - Получить снижение стоимости              ->    OK
+      ========================= -->
+      <section id="principles-description">
+        <div class="container">
+
+          <div class="section-heading">
+            <h2>Принцип накопления</h2>
+          </div>
+
+          <div class="principles-description__inner">
+
+            <!-- Карточка принципа
+            ========================= -->
+            <div class="principle-card lazy-load">
+              <div class="principle-card__inner">
+
+                <div class="principle-card__icon">
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+
+                <div class="heading">
+                  <h6>Выбрать удобную дату перелета</h6>
+                </div>
+
+              </div>
+            </div> <!-- principle-card -->
+
+            <!-- Карточка принципа
+            ========================= -->
+            <div class="principle-card lazy-load">
+              <div class="principle-card__inner">
+
+                <div class="principle-card__icon">
+                  <i class="fas fa-percent"></i>
+                </div>
+
+                <div class="heading">
+                  <h6>Накопить больше 50% бронирования на рейс</h6>
+                </div>
+
+              </div>
+            </div> <!-- principle-card -->
+
+            <!-- Карточка принципа
+            ========================= -->
+            <div class="principle-card lazy-load">
+              <div class="principle-card__inner">
+
+                <div class="principle-card__icon">
+                  <i class="fas fa-hand-holding-usd"></i>
+                </div>
+
+                <div class="heading">
+                  <h6>Получить снижение стоимости</h6>
+                </div>
+
+              </div>
+            </div> <!-- principle-card -->
+
+          </div>
+        </div>
+      </section> <!-- !principles-description -->
+
+
+
+      <!-- Доверие компании
+      ========================= -->
+      <section id="trust">
+        <div class="container">
+
+          <div class="section-heading">
+            <h2>Нам доверяют</h2>
+          </div>
+
+        </div>
+      </section> <!-- !trust -->
+
+
+
+      <!-- Поиск рейсов
+
+        Форма поиска рейсов:
+        - Откуда (Город или аэропорт)   ->    Отсутствует
+        - Куда (Город или аэропорт)     ->    Отсутствует
+        - Туда (дата вылета)            ->    Отсутствует
+        - Обратно (дата вылета)         ->    Отсутствует
+        - Количество пассажиров (1 - 8) ->    Отсутствует
+        - Кнопка поиска                 ->    Отсутствует
+      ========================= -->
+      <section id="search">
+        <div class="container">
+
+          <div class="section-heading">
+            <h2>Найдите рейс для себя</h2>
+          </div>
+
+        </div>
+      </section> <!-- !search -->
+
+
+
+      <!-- Акции
+        Карточки акций из медиафайлов
+
+        Карточка включает в себя:
+        - Изображение                ->    Отсутствует
+        - Название                   ->    Отсутствует
+        - Краткое описание           ->    Отсутствует
+        - Кнпока для просмотра акции ->    Отсутствует
+      ========================= -->
+      <section id="promotions">
+        <div class="container">
+
+          <div class="section-heading">
+            <h2>Наши акции</h2>
+          </div>
+
+        </div>
+      </section> <!-- !promotions -->
+
+
+
+      <!-- Подписка на закрытые акции
+
+        Форма подписки содержит:
+        - Поле E-mail            ->    Отсутствует
+        - Кнопка для подписки    ->    Отсутствует
+      ========================= -->
+      <section id="promotions-subscription">
+        <div class="container">
+
+          <div class="section-heading">
+            <h2>Подпишитесь на закрытые акции</h2>
+          </div>
+
+        </div>
+      </section> <!-- !promotions-subscription -->
+
+    </main> <!-- !router-view -->
+
+
+
+    <!-- Подвал
+
+      - Телефон                ->    Отсутствует
+      - Навигация по сайту     ->    Отсутствует
+    ========================= -->
+    <footer id="footer">
+      <div class="container">
+
+      </div>
+    </footer> <!-- !footer -->
+
+  </div> <!-- !app -->
+
+
+
+  <!-- JS -->
+
+  <script src="./assets/js/jquery-3.5.1.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+  <!-- !JS -->
+
+</body> <!-- !body -->
+
+</html>

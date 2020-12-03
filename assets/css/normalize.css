@@ -1,0 +1,53 @@
+/*
+  Сброс стандартных стилей браузера
+  ====================
+*/
+
+
+
+/*
+  Сбросим отступы
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  Изменим модель расчета ширины и высоты
+*/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/*
+  Уберем назойливую обводку элементов
+*/
+*:hover, *:before:hover, *:after:hover,
+*:focus, *:before:focus, *:after:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/*
+  Сбросим стили ссылок
+*/
+a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+/*
+  Сбросим стили списков
+*/
+ul {
+  margin: 0;
+}
+
+ul, ul li {
+  list-style-type: none;
+
+  margin-left: 0;
+  padding-left: 0;
+}

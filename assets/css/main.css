@@ -1,0 +1,218 @@
+/*
+  Подключим остальные файлы
+  ====================
+*/
+
+@import './fonts.css';
+@import './all.css';
+@import './normalize.css';
+@import './grid.css';
+@import './partials/header.css';
+@import './partials/footer.css';
+
+
+
+:root {
+
+  /*
+    Цвета
+    ====================
+  */
+  --white: #ffffff;
+  --black: #000000;
+  --dark-blue: #112141;
+  --light-blue: #1898fd;
+  --blue: #195c91;
+  --bright-blue: #397eff;
+  --gray-blue: #517cce;
+  --little-light-black: #333333;
+
+  --gray: #8a9cbd;
+  --gray-op-1: rgb(140, 155, 190, .4);
+  --gray-op-2: rgba(140, 155, 190, .1);
+  --gray-op-3: rgba(140, 155, 190, .05);
+
+
+  /*
+    Описание цветовой схемы
+    ====================
+  */
+
+  --light-color: var(--white);
+  --dark-color: var(--black);
+
+  --main-dark: var(--blue);
+
+  --grad-blue-dark: var(--dark-blue);
+  --grad-blue-light: var(--light-blue);
+  --grad-blue: var(--blue);
+
+  --accent-color: var(--bright-blue);
+
+  --header-color: var(--gray-blue);
+  --text-color: var(--little-light-black);
+
+  --neutral: var(--gray);
+  --light-neutral-1: var(--gray-op-1);
+  --light-neutral-2: var(--gray-op-2);
+
+  --link-decor-color: var(--text-color);
+
+  /*
+    Описание шрифтов
+    ====================
+  */
+
+  --main-font-family: 'Montserrat';
+  --main-font-size: 16px;
+
+  /*
+    Описание размеров
+    ====================
+  */
+
+  --site-min-width: 300px;
+
+  --link-decor-height: 1px;
+
+  /*
+    Описание типовых стилей
+    ====================
+  */
+
+  --section-border: 2px solid var(--accent-color);
+  --shadow: 0px 0px 10px 0px var(--light-neutral-1);
+}
+
+
+
+/*
+  Описание общих стилей
+  ====================
+*/
+
+
+
+/*
+  Стили для body
+*/
+body {
+  min-width: var(--site-min-width);
+
+  font-family: var(--main-font-family);
+  font-size: var(--main-font-size);
+
+  color: var(--text-color);
+}
+
+body.scroll-fix {
+  overflow: hidden;
+}
+
+
+
+/*
+  Стили тэгов
+*/
+h1, h2, h3, h4, h5, h6 {
+  margin: .75em 0;
+
+  font-weight: 700;
+
+  color: var(--main-dark);
+}
+
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 2.8em;
+}
+h3 {
+  font-size: 2.5em;
+}
+h4 {
+  font-size: 2em;
+}
+h5 {
+  font-size: 1.5em;
+}
+h6 {
+  font-size: 1.25em;
+}
+
+
+
+a {
+  position: relative;
+}
+
+a::after {
+  content: '';
+
+  height: var(--link-decor-height);
+
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -3px;
+
+  background-color: var(--text-color);
+
+  opacity: 0;
+
+  transition: opacity .2s ease;
+}
+
+a.decor-light::after {
+  background-color: var(--light-color);
+}
+
+a:hover::after {
+  opacity: 1;
+}
+
+
+
+.img-wrapper > img {
+  width: 100%;
+}
+
+
+
+/*
+  Секции
+*/
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  border-bottom: var(--section-border);
+}
+
+.section-heading h2 {
+  margin: 0;
+  margin-bottom: 60px;
+
+  text-align: center;
+}
+
+
+
+
+/*
+  Lazy Load
+*/
+.lazy-load {
+  opacity: 0;
+
+  transform: scale(.5);
+
+  transition: all .5s ease-out;
+}
+
+.lazy-load[data-shown=true] {
+  opacity: 1;
+
+  transform: scale(1);
+}
