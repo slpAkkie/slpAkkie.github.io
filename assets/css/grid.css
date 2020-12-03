@@ -20,7 +20,7 @@
   padding-right: 30px;
 }
 
-@media screen and (max-width: 359px) {
+@media screen and (max-width: 381px) {
   .container {
 
     padding-left: 10px;

@@ -105,6 +105,18 @@ body {
   color: var(--text-color);
 }
 
+@media screen and (max-width: 349px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 319px) {
+  body {
+    font-size: 14px;
+  }
+}
+
 body.scroll-fix {
   overflow: hidden;
 }

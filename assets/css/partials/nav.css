@@ -154,6 +154,7 @@ nav.header__nav {
 
   nav.header__nav {
     height: auto;
+    font-size: 18px;
   }
 
   .nav__burger,
