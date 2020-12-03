@@ -7,8 +7,8 @@
 $( document ).ready( function () {
 
   /** Плавное появление карточек принципа накопления */
-  $( document ).scroll( showPrincipleCards );
-  showPrincipleCards();
+  $( document ).scroll( scrollfect );
+  scrollfect();
 
   /** По нажатию на кнопку-бургер переключить видимость меню */
   $( '#js-burger' ).click( toggleNavMenu );
@@ -31,14 +31,14 @@ $( document ).ready( function () {
  * Плавное появление карточек принципа накопления
  * =========================
  */
-function showPrincipleCards() {
-  $( '.lazy-load' ).each( function () {
+function scrollfect() {
+  $( '.scrollfect--block' ).each( function () {
     if (
       ( window.scrollY <= this.offsetTop + this.clientHeight )
       &&
       ( window.scrollY + window.innerHeight >= this.offsetTop )
-    ) $( this ).attr( 'data-shown', 'true' );
-    else $( this ).attr( 'data-shown', 'false' );
+    ) $( this ).attr( 'scrollfect-visible', 'true' );
+    else $( this ).attr( 'scrollfect-visible', 'false' );
   } );
 }
 

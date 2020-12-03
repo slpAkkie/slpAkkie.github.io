@@ -201,9 +201,9 @@ section {
 
 
 /*
-  Lazy Load
+  Scrollfect - Стили для плавного появления элементов при скролле
 */
-.lazy-load {
+.scrollfect--block {
   opacity: 0;
 
   transform: scale(.5);
@@ -211,7 +211,7 @@ section {
   transition: all .5s ease-out;
 }
 
-.lazy-load[data-shown=true] {
+.scrollfect--block[scrollfect-visible=true] {
   opacity: 1;
 
   transform: scale(1);
