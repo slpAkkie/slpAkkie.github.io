@@ -1,12 +1,11 @@
 # [slpAkkie.github.io](//slpAkkie.github.io)
 
-## Демонстрация моих проектов
-
-На этом "сайте" от github я публикую свои frontend работы
+Здесь представленны некоторые мои frontend проекты
 
 ## Работы
 
-- [Игра Том и Джерри JS](https://slpakkie.github.io/TomAndJerry-JS/)
-- [Первый модуль WSR2020 (WSR версия с доработками)](https://slpakkie.github.io/CitiesNearby_Frontend/)
-- [Tonli (Frontend часть сервиса проведения тестов)](https://slpakkie.github.io/Tonli/)
-- [Stodo (Список задач для студентов)](https://slpakkie.github.io/Stodo/)
+- [Игра Том и Джерри JS](https://slpakkie.github.io/TomAndJerry-JS/) - Первый опыт написания игры на javascript canvas
+- [CitiesNearby__Frontend](https://slpakkie.github.io/CitiesNearby_Frontend/) - Frontend для WSR2020 (Первый модуль) с небольшими доработками
+- [Tonli](https://slpakkie.github.io/Tonli/) - Сервис для создания тестов
+- [Stodo](https://slpakkie.github.io/Stodo/) - Web приложение (todo-лист)
+- [Работы для портфолио](https://slpakkie.github.io/frontend/)
