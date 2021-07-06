@@ -9,3 +9,4 @@
 - [Tonli](https://slpakkie.github.io/Tonli/) - Сервис для создания тестов
 - [Stodo](https://slpakkie.github.io/Stodo/) - Web приложение (todo-лист)
 - [Работы для портфолио](https://slpakkie.github.io/frontend/)
+- [Snake JS](https://slpakkie.github.io/snake-js/)
